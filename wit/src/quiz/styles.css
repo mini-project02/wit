@@ -1,5 +1,103 @@
-.img {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  width: 1200px;
+  height: 630px;
+  display: flex;
+  align-items: center;
+}
+
+.left-section {
+  width: 590px;
+  height: 630px;
+}
+
+.left-section .img-box {
+  height: 100%;
+  width: 100%;
+  background-image: url('../../public/css.png');
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  background-position: center;
+}
+
+.right-section {
+  position: relative;
+  width: 610px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-section .home {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 30px;
+}
+
+.right-section .home img {
+  width: 80px;
+}
+
+.quiz-form .quiz-input {
+  width: 480px;
+  font-size: 32px;
+  border: none;
+  outline: none;
+  text-align: center;
+  caret-color: #888;
+}
+
+.quiz-timer {
+  width: 480px;
+  height: 8px;
+  border-radius: 40px;
+  margin-top: 8px;
+}
+
+.quiz-timer .current-timer {
+  width: 100%;
+  height: 100%;
+  background-color: #0075ff;
+  margin: 0 auto;
+  border-radius: 40px;
+  transition: width 1s linear;
+}
+
+.quiz-answer {
+  margin-top: 36px;
+  width: 480px;
+  height: 66px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.quiz-answer > div {
+  width: 62px;
+  height: 100%;
+  background-color: #ffc700;
+  border: 4px solid #000;
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
 }

@@ -8,15 +8,32 @@
   </head>
   <body>
     <div class="container">
-      <div class="quiz-field">
-        <div class="img"></div>
-        <div class="timer"></div>
-        <div class="answer"></div>
+      <div class="quiz">
+        <div class="left-section">
+          <div class="img-box"></div>
+        </div>
+        <div class="right-section">
+          <div class="home">
+            <a href="#"><img src="../../public/wit.png" alt="" /></a>
+          </div>
+          <form class="quiz-form">
+            <input
+              type="text"
+              class="quiz-input"
+              placeholder="정답을 입력해주세요"
+              autofocus
+            />
+          </form>
+          <div class="quiz-timer">
+            <div class="current-timer"></div>
+          </div>
+          <div class="quiz-answer">
+            <div>C</div>
+            <div>S</div>
+            <div>S</div>
+          </div>
+        </div>
       </div>
-      <form class="quiz-form">
-        <input type="text" class="quiz-input" />
-        <button type="submit" class="quiz-btn">입력</button>
-      </form>
     </div>
     <script type="module" src="./app.js"></script>
   </body>
