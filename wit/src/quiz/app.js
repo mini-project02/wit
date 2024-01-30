@@ -1,16 +1,16 @@
 import Quiz from './components/quiz.js'
 
-const $img = document.querySelector('.img')
+const $imgBox = document.querySelector('.img-box')
 
 // test localstorage data
 window.addEventListener('load', () => {
   const data = {
     name: 'jun',
-    subject: 'test',
+    subject: 'programming',
     currentTime: new Date(),
   }
   localStorage.setItem('player', JSON.stringify(data))
 })
 
 const { name, subject } = JSON.parse(localStorage.getItem('player'))
-const quiz = new Quiz($img, name, subject)
+const quiz = new Quiz($imgBox, name, subject)

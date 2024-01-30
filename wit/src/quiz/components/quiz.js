@@ -18,7 +18,7 @@ class Quiz {
     this.#quizData = []
 
     this.fetchData()
-    this.clickEvent()
+    this.submitEvent()
   }
 
   async fetchData() {
@@ -30,62 +30,81 @@ class Quiz {
     this.render()
   }
 
-  clickEvent() {
-    const $quizField = document.querySelector('.quiz-form')
+  submitEvent() {
+    const $quizForm = document.querySelector('.quiz-form')
     const $quizInput = document.querySelector('.quiz-input')
 
-    console.log($quizField)
-    $quizField.addEventListener('submit', (e) => {
+    $quizForm.addEventListener('submit', (e) => {
       e.preventDefault()
       const answer = this.#quizData[this.#player.level]?.answer.trim().toLowerCase()
       clearInterval(this.#interval)
       if (answer === $quizInput.value.toLowerCase()) {
-        console.log('정답')
-        this.nextStep()
         // 정답
-      } else {
         this.nextStep()
+      } else {
         // 오답, 체력 줄어듬, 정답 보여주면서 다음 문제
+        this.nextStep()
       }
     })
   }
 
   nextStep() {
     const $quizInput = document.querySelector('.quiz-input')
-    const $answer = document.querySelector('.answer')
 
-    if (this.#player.level === this.#quizData.length - 1) {
-      console.log('게임쎗')
-      $answer.innerText = this.#quizData[this.#player.level].answer
+    if (this.#player.level === this.#quizData.length - 1 || this.#player.hp <= 0) {
+      console.log('게임종료 -> result 페이지 이동')
+      this.answer()
       return
     }
 
-    $answer.innerText = this.#quizData[this.#player.level].answer
+    this.answer()
     setTimeout(() => {
       this.#player.level += 1
       this.#timer = 10
       $quizInput.value = ''
-      $answer.innerText = ''
 
       this.render()
     }, 2000)
   }
 
+  answer() {
+    const $answerDivs = document.querySelectorAll('.quiz-answer > div')
+    const answer = this.#quizData[this.#player.level].answer.trim().split('')
+    answer.forEach((char, index) => {
+      $answerDivs[index].innerText = char
+    })
+  }
+
+  createHint(len) {
+    const $quizAnswer = document.querySelector('.quiz-answer')
+    $quizAnswer.innerHTML = ''
+    for (let i = 0; i < len; i++) {
+      const $div = document.createElement('div')
+      $quizAnswer.appendChild($div)
+    }
+  }
+
   render() {
     // target에 이미지 보여주기
-    const $timer = document.querySelector('.timer')
+    const $timer = document.querySelector('.current-timer')
     const { level } = this.#player
     const quizData = this.#quizData
+    const len = quizData[level].answer.length
 
+    // 이미지 로드
     this.#target.style.backgroundImage = `url('${quizData[level].img}')`
+    // 글자수 힌트
+    this.createHint(len)
 
+    // 타이머
     this.#interval = setInterval(() => {
       this.#timer--
-      $timer.innerText = this.#timer
+      $timer.style.width = `${this.#timer * 10}%`
       if (this.#timer === 0) {
+        $timer.style.width = `${this.#timer * 10}%`
         clearInterval(this.#interval)
-        this.nextStep()
         // 시간초과 다음 단계
+        this.nextStep()
       }
     }, 1000)
   }

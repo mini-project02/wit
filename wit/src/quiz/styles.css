@@ -29,7 +29,7 @@ body {
 .left-section .img-box {
   height: 100%;
   width: 100%;
-  background-image: url('../../public/css.png');
+  /* background-image: url('../../public/css.png'); */
   background-size: cover;
   background-position: center;
 }
