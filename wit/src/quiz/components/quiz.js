@@ -89,18 +89,14 @@ class Quiz {
   }
 
   render() {
-    // target에 이미지 보여주기
     const $timer = document.querySelector('.current-timer')
     const { level } = this.#player
     const quizData = this.#quizData
     const len = quizData[level].answer.length
 
-    // 이미지 로드
     this.#target.style.backgroundImage = `url('${quizData[level].img}')`
-    // 글자수 힌트
     this.createHint(len)
 
-    // 타이머
     this.#interval = setInterval(() => {
       this.#timer--
       $timer.style.width = `${this.#timer * 10}%`
