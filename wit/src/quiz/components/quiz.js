@@ -68,7 +68,7 @@ class Quiz {
       $timer.style.width = `100%`
 
       this.render()
-    }, 2000)
+    }, 1000)
   }
 
   answer() {

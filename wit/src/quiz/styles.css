@@ -24,12 +24,14 @@ body {
 .left-section {
   width: 590px;
   height: 630px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-section .img-box {
   height: 100%;
   width: 100%;
-  /* background-image: url('../../public/css.png'); */
   background-size: cover;
   background-position: center;
 }
