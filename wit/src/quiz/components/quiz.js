@@ -50,6 +50,7 @@ class Quiz {
 
   nextStep() {
     const $quizInput = document.querySelector('.quiz-input')
+    const $timer = document.querySelector('.current-timer')
 
     if (this.#player.level === this.#quizData.length - 1 || this.#player.hp <= 0) {
       console.log('게임종료 -> result 페이지 이동')
@@ -58,10 +59,13 @@ class Quiz {
     }
 
     this.answer()
+
     setTimeout(() => {
       this.#player.level += 1
       this.#timer = 10
       $quizInput.value = ''
+      $timer.style.backgroundColor = '#0075ff'
+      $timer.style.width = `100%`
 
       this.render()
     }, 2000)
@@ -100,10 +104,13 @@ class Quiz {
     this.#interval = setInterval(() => {
       this.#timer--
       $timer.style.width = `${this.#timer * 10}%`
-      if (this.#timer === 0) {
+      if (this.#timer === quizData.length / 2) $timer.style.backgroundColor = 'red'
+
+      if (this.#timer < -1) {
         $timer.style.width = `${this.#timer * 10}%`
         clearInterval(this.#interval)
         // 시간초과 다음 단계
+        console.log('시간초과')
         this.nextStep()
       }
     }, 1000)
