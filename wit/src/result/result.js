@@ -30,3 +30,13 @@ stopbutton.addEventListener('click', function () {
 
   console.log('경과 시간:', minutesDifference, '분', secondsDifference, '초')
 })
+
+//링크 공유
+
+const naver = document.getElementById('naver')
+
+naver.addEventListener('click', function () {
+  console.log('Click event fired!')
+  const url = window.location.href // 현재 페이지의 URL 가져오기
+  window.open('http://www.naver.com/sharer/sharer.php?u=' + url)
+})
