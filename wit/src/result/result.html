@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="result.css" rel="stylesheet" />
   </head>
   <body>
-    <button id="testbutton">start</button>
-    <button id="stopbutton">제출하기</button>
+    <h2 id="logo">wit</h2>
+    <div id="container">
+      <h1>성적표</h1>
+      <div id="recordbox">
+        <h3>당신의 점수는?</h3>
+        <p id="totalscore">100점</p>
+        <p id="detailscore">경과시간<br />맞춘문제수<br />등등</p>
+        <p id="scorecommend">참 잘했어요!</p>
+      </div>
+
+      <div id="sharebox">
+        <h2>친구에게 결과 공유하기</h2>
+        <div id="buttonbox">
+          <button id="kakao"></button>
+          <button id="naver"></button>
+          <button id="linkcopy"></button>
+        </div>
+      </div>
+    </div>
 
     <script src="result.js"></script>
   </body>

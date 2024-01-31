@@ -6,7 +6,7 @@ let startTime
 button.addEventListener('click', function () {
   // 기록 시작 시간
   startTime = new Date()
-  localStorage.setItem('start_time', startTime.toString())
+  localStorage.setItem('start_time', startTime.toString()) // tostring을 이용해 객체에서 문자열로 바꿔주기
   console.log('시작 시간:', startTime)
 })
 
@@ -18,7 +18,7 @@ stopbutton.addEventListener('click', function () {
 
   // 시작 시간 불러오기
   const storedStartTime = localStorage.getItem('start_time')
-  const startTime = new Date(storedStartTime)
+  const startTime = new Date(storedStartTime) // 불러온 start_time은 문자열 -> 객체로 변환
   console.log('시작 시간:', startTime)
 
   // 두 시간의 차이 계산
