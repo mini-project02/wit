@@ -90,12 +90,7 @@ class Quiz {
     answer.forEach((char, index) => {
       if ($input.length === $answerDivs.length && $input[index] === char.toLowerCase()) {
         $answerDivs[index].classList.add('green')
-      } else if (
-        $input.length === $answerDivs.length &&
-        $input[index] !== char.toLowerCase()
-      ) {
-        $answerDivs[index].classList.add('red')
-      } else if ($input.length == $answerDivs.length) {
+      } else {
         $answerDivs[index].classList.add('red')
       }
 
