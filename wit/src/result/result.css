@@ -1,75 +1,106 @@
 html {
   background-color: #0075ff;
+  width: 1280px;
+  height: 720px;
 }
-#logo {
-  color: yellow;
-  display: inline;
+
+#navbar {
+  width: 1280px;
+  height: 68px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#navimg {
+  background-image: url('../../public/wit.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 57px;
+  height: 42px;
 }
 
 #container {
-  margin-top: 122px;
-  margin-left: 70px;
-  border-radius: 30px;
-  width: 100%;
-  height: 100%;
+  width: 1167px;
+  height: 577px;
   background-color: white;
-}
-
-h1 {
-  text-align: center;
-  font-size: 70px;
-}
-h3 {
-  font-size: 48px;
-}
-
-#recordbox {
+  border-radius: 30px;
   margin: 0 auto;
-  width: 302px;
-  height: 600px;
-  background-color: rgb(245, 244, 244);
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+  font-size: 32px;
+}
+
+#scorebox {
+  border-left: 4px black solid;
+  border-right: 4px black solid;
+}
+#recordbox,
+#scorebox,
+#sharebox {
+  width: 370px;
+  height: 560px;
+}
+
+#lefthp,
+#correctquiz,
+#time {
+  width: 350px;
+  height: 180px;
+
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+}
+#scorebox {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#totalscore {
-  font-size: 80px;
+#scorebox > img {
+  width: 178px;
+  height: 178px;
+  border-radius: 50%;
+  background-color: goldenrod;
 }
 
-#scorecommend {
-  font-size: 36px;
+#mainscore {
+  font-size: 75px;
 }
 
+#username,
+#commend {
+  font-size: 21px;
+}
 #sharebox {
-  margin: 0 auto;
-  text-align: center;
-  width: 389px;
-  height: 339px;
-  background-color: rgb(241, 241, 241);
-}
-
-#buttonbox {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-button {
-  margin: 10px auto;
-  width: 100px;
-  height: 30px;
-
-  border-radius: 20px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-#kakao {
+#togooz,
+#togohome,
+#togolink {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  border: none;
+}
+
+#togooz {
+  background-color: #9d9d9d;
+}
+
+#togohome {
   background-color: #ffc700;
 }
-#naver {
-  background-color: #11ce00;
-}
-#linkcopy {
-  background-color: #0075ff;
+#togolink {
+  background-color: black;
 }

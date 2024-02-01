@@ -7,23 +7,38 @@
     <link href="result.css" rel="stylesheet" />
   </head>
   <body>
-    <h2 id="logo">wit</h2>
+    <div id="navbar">
+      <img id="navimg" />
+      <h2>메뉴</h2>
+    </div>
     <div id="container">
-      <h1>성적표</h1>
       <div id="recordbox">
-        <h3>당신의 점수는?</h3>
-        <p id="totalscore">100점</p>
-        <p id="detailscore">경과시간<br />맞춘문제수<br />등등</p>
-        <p id="scorecommend">참 잘했어요!</p>
+        <div id="lefthp">
+          <h2 class="text">남은체력:</h2>
+        </div>
+        <hr />
+        <div id="correctquiz">
+          <h2 class="text">맞춘문제수:</h2>
+        </div>
+        <hr />
+        <div id="time">
+          <h2 class="text">경과시간:</h2>
+        </div>
       </div>
 
+      <div id="scorebox">
+        <img
+          id="userimg"
+          src="/Users/mac/Desktop/oz_coding/미니프로젝트/wit/wit/public/wit.png"
+        />
+        <p id="username">ㅇㅇㅇ 님의 점수는?</p>
+        <div id="mainscore">100점</div>
+        <div id="commend">참잘했어요</div>
+      </div>
       <div id="sharebox">
-        <h2>친구에게 결과 공유하기</h2>
-        <div id="buttonbox">
-          <button id="kakao"></button>
-          <button id="naver"></button>
-          <button id="linkcopy"></button>
-        </div>
+        <button id="togooz">oz코딩스쿨</button>
+        <button id="togohome">홈으로</button>
+        <button id="togolink">링크복사</button>
       </div>
     </div>
 
