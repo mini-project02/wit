@@ -150,9 +150,11 @@ body {
 }
 
 .quiz-answer > div.green {
-  background-color: green;
+  background-color: #4dbf77;
+  color: #fff;
 }
 
 .quiz-answer > div.red {
-  background-color: red;
+  background-color: #e63946;
+  color: #fff;
 }
