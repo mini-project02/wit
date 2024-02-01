@@ -9,8 +9,10 @@ class Quiz {
     this.#player = {
       name,
       subject,
-      level: 0,
-      hp: 100,
+      level: 1,
+      hp: 5,
+      endTime: 0,
+      isSuccess: false,
     }
     this.#target = target
     this.#timer = 10
@@ -35,10 +37,11 @@ class Quiz {
 
     $quizForm.addEventListener('submit', (e) => {
       e.preventDefault()
-      const answer = this.#quizData[this.#player.level]?.answer.trim().toLowerCase()
+      const answer = this.#quizData[this.#player.level - 1]?.answer.trim().toLowerCase()
       clearInterval(this.#interval)
       if (answer === $quizInput.value.toLowerCase()) {
         // 정답
+        this.#player.isSuccess = true
         this.nextStep()
       } else {
         // 오답, 체력 줄어듬, 정답 보여주면서 다음 문제
@@ -52,13 +55,18 @@ class Quiz {
     const $quizInput = document.querySelector('.quiz-input')
     const $timer = document.querySelector('.current-timer')
 
-    if (this.#player.level === this.#quizData.length - 1 || this.#player.hp <= 0) {
+    if (this.#player.level === this.#quizData.length || this.#player.hp <= 0) {
       console.log('게임종료 -> result 페이지 이동')
+      this.createHeart()
       this.answer()
+      this.#player.endTime = new Date()
+      console.log(this.#player)
       return
     }
 
     this.answer()
+    this.createHeart()
+
     setTimeout(() => {
       this.#player.level += 1
       this.#timer = 10
@@ -72,8 +80,25 @@ class Quiz {
 
   answer() {
     const $answerDivs = document.querySelectorAll('.quiz-answer > div')
-    const answer = this.#quizData[this.#player.level].answer.trim().split('')
+    const answer = this.#quizData[this.#player.level - 1].answer.trim().split('')
+    const $input = document
+      .querySelector('.quiz-input')
+      .value.trim()
+      .toLowerCase()
+      .split('')
+
     answer.forEach((char, index) => {
+      if ($input.length === $answerDivs.length && $input[index] === char.toLowerCase()) {
+        $answerDivs[index].classList.add('green')
+      } else if (
+        $input.length === $answerDivs.length &&
+        $input[index] !== char.toLowerCase()
+      ) {
+        $answerDivs[index].classList.add('red')
+      } else if ($input.length == $answerDivs.length) {
+        $answerDivs[index].classList.add('red')
+      }
+
       $answerDivs[index].innerText = char
     })
   }
@@ -87,8 +112,27 @@ class Quiz {
     }
   }
 
+  createHeart() {
+    const hpField = document.querySelector('.hp-field')
+    hpField.innerHTML = ''
+    for (let i = 0; i < this.#player.hp; i++) {
+      hpField.innerHTML += `<div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"
+                />
+              </svg>
+            </div>`
+    }
+  }
+
   reduceHp() {
-    this.#player.hp -= 20
+    this.#player.hp -= 1
     console.log(this.#player.hp)
   }
 
@@ -97,8 +141,9 @@ class Quiz {
     const { level } = this.#player
     const quizData = this.#quizData
 
-    this.#target.style.backgroundImage = `url('${quizData[level].img}')`
-    this.createHint(quizData[level]?.answer.length)
+    this.#target.style.backgroundImage = `url('${quizData[level - 1].img}')`
+    this.createHint(quizData[level - 1]?.answer.length)
+    this.createHeart()
 
     this.#interval = setInterval(() => {
       this.#timer--
