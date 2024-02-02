@@ -16,3 +16,4 @@ function getUserNickname() {
 function createQuizBtn() {
   const quizs = []
 }
+//이름바꿈
