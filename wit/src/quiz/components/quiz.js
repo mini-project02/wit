@@ -1,3 +1,5 @@
+import Player from './player.js'
+
 class Quiz {
   #player
   #target
@@ -6,14 +8,7 @@ class Quiz {
   #quizData
 
   constructor(target, name, subject) {
-    this.#player = {
-      name,
-      subject,
-      level: 1,
-      hp: 5,
-      endTime: 0,
-      isSuccess: false,
-    }
+    this.#player = new Player(name, subject)
     this.#target = target
     this.#timer = 10
     this.#interval = 0
@@ -24,7 +19,7 @@ class Quiz {
   }
 
   async fetchData() {
-    const { subject } = this.#player
+    const subject = this.#player.getSubject()
     const res = await (await fetch('./data.json')).json()
     const quizs = res.filter((data) => data.subject === subject).map((data) => data.quizs)
     this.#quizData = quizs[0]
@@ -37,15 +32,13 @@ class Quiz {
 
     $quizForm.addEventListener('submit', (e) => {
       e.preventDefault()
-      const answer = this.#quizData[this.#player.level - 1]?.answer.trim().toLowerCase()
+      const answer = this.#quizData[this.#player.getLevel()]?.answer.trim().toLowerCase()
       clearInterval(this.#interval)
+
       if (answer === $quizInput.value.toLowerCase()) {
-        // 정답
-        this.#player.isSuccess = true
         this.nextStep()
       } else {
-        // 오답, 체력 줄어듬, 정답 보여주면서 다음 문제
-        this.reduceHp()
+        this.#player.reduceHp()
         this.nextStep()
       }
     })
@@ -55,12 +48,11 @@ class Quiz {
     const $quizInput = document.querySelector('.quiz-input')
     const $timer = document.querySelector('.current-timer')
 
-    if (this.#player.level === this.#quizData.length || this.#player.hp <= 0) {
-      console.log('게임종료 -> result 페이지 이동')
+    this.#player.checkClear(this.#quizData.length)
+
+    if (this.#player.endGame(this.#quizData.length)) {
       this.createHeart()
       this.answer()
-      this.#player.endTime = new Date()
-      console.log(this.#player)
       return
     }
 
@@ -68,7 +60,7 @@ class Quiz {
     this.createHeart()
 
     setTimeout(() => {
-      this.#player.level += 1
+      this.#player.levelUp()
       this.#timer = 10
       $quizInput.value = ''
       $timer.style.backgroundColor = '#0075ff'
@@ -80,7 +72,7 @@ class Quiz {
 
   answer() {
     const $answerDivs = document.querySelectorAll('.quiz-answer > div')
-    const answer = this.#quizData[this.#player.level - 1].answer.trim().split('')
+    const answer = this.#quizData[this.#player.getLevel()].answer.trim().split('')
     const $input = document
       .querySelector('.quiz-input')
       .value.trim()
@@ -110,7 +102,7 @@ class Quiz {
   createHeart() {
     const hpField = document.querySelector('.hp-field')
     hpField.innerHTML = ''
-    for (let i = 0; i < this.#player.hp; i++) {
+    for (let i = 0; i < this.#player.getHp(); i++) {
       hpField.innerHTML += `<div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -126,18 +118,12 @@ class Quiz {
     }
   }
 
-  reduceHp() {
-    this.#player.hp -= 1
-    console.log(this.#player.hp)
-  }
-
   render() {
     const $timer = document.querySelector('.current-timer')
-    const { level } = this.#player
     const quizData = this.#quizData
 
-    this.#target.style.backgroundImage = `url('${quizData[level - 1].img}')`
-    this.createHint(quizData[level - 1]?.answer.length)
+    this.#target.style.backgroundImage = `url('${quizData[this.#player.getLevel()].img}')`
+    this.createHint(quizData[this.#player.getLevel()]?.answer.length)
     this.createHeart()
 
     this.#interval = setInterval(() => {
@@ -147,9 +133,8 @@ class Quiz {
 
       if (this.#timer === -1) {
         clearInterval(this.#interval)
-        // 시간초과 다음 단계
-        console.log('시간초과')
-        this.reduceHp()
+
+        this.#player.reduceHp()
         this.nextStep()
       }
     }, 1000)
