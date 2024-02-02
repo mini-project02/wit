@@ -1,0 +1,85 @@
+.loginhome {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #0075ff;
+}
+
+#title {
+  width: 24.609375vw;
+  height: 13.72vw;
+  position: absolute;
+  left: 15vw;
+  object-fit: contain;
+}
+
+.login-container {
+  width: 43.75vw;
+  height: 87.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 3.90625vw;
+  background-color: white;
+  border-radius: 2.34375vw;
+  overflow-x: scroll;
+}
+
+#login-title {
+  width: 26.328125vw;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 800;
+  font-size: 2.5vw;
+  letter-spacing: 0.1vw;
+}
+
+#login-title img {
+  width: 6.25vw;
+  height: auto;
+}
+
+#login-subtitle {
+  width: 26.328125vw;
+  height: 2.65625vw;
+  margin-top: 2.1875vw;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  font-size: 0.859375vw;
+  line-height: 1.7375vw;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5.859375vw;
+  overflow: auto;
+}
+
+#login-input {
+  width: 28.140625vw;
+  height: 3.75vw;
+  padding: 1vw;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ffc700;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 1.3vw;
+}
+
+#login-btn {
+  width: 28.140625vw;
+  height: 6.09375vw;
+  margin-top: 3.90625vw;
+  border-radius: 6vh;
+  border: none;
+  background-color: black;
+  color: #ffc700;
+  font-family: 'Roboto Flex', sans-serif;
+  letter-spacing: 0.2vw;
+  font-weight: 900;
+  font-size: 3.125vw;
+}
