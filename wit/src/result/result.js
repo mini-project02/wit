@@ -33,20 +33,20 @@
 
 //링크 공유
 
-// function clip() {
-//   var url = '' // <a>태그에서 호출한 함수인 clip 생성
-//   var textarea = document.createElement('textarea')
-//   //url 변수 생성 후, textarea라는 변수에 textarea의 요소를 생성
+function clip() {
+  var url = '' // <a>태그에서 호출한 함수인 clip 생성
+  var textarea = document.createElement('textarea')
+  //url 변수 생성 후, textarea라는 변수에 textarea의 요소를 생성
 
-//   document.body.appendChild(textarea) //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
-//   url = window.document.location.href //url에는 현재 주소값을 넣어줌
-//   textarea.value = url // textarea 값에 url를 넣어줌
-//   textarea.select() //textarea를 설정
+  document.body.appendChild(textarea) //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
+  url = window.document.location.href //url에는 현재 주소값을 넣어줌
+  textarea.value = url // textarea 값에 url를 넣어줌
+  textarea.select() //textarea를 설정
 
-//   document.body.removeChild(textarea) //extarea 요소를 없애줌
+  document.body.removeChild(textarea) //extarea 요소를 없애줌
 
-//   alert('URL이 복사되었습니다.') // 알림창
-// }
+  alert('URL이 복사되었습니다.') // 알림창
+}
 
 // const facebook = document.getElementById('facebook')
 
@@ -61,3 +61,56 @@ const togooz = document.getElementById('togooz')
 togooz.addEventListener('click', function () {
   window.open('https://ozcodingschool.com/', '_blank')
 })
+
+const test = [
+  {
+    name: '강주원',
+    hp: 30,
+    score: 6,
+    time: 55,
+  },
+  {
+    name: '홍길동',
+    hp: 50,
+    score: 8,
+    time: new Date(),
+  },
+  {
+    name: '김영희',
+    hp: 100,
+    score: 7,
+    time: new Date(),
+  },
+  {
+    name: '이철수',
+    hp: 99,
+    score: 9,
+    time: new Date(),
+  },
+  {
+    name: '박미영',
+    hp: 30,
+    score: 5,
+    time: new Date(),
+  },
+]
+
+console.log(test[0])
+
+const correctquiz = document.getElementById('correctquiz')
+
+const icon = document.createElement('p')
+icon.innerText = `${test[0].score} 입니다 `
+correctquiz.appendChild(icon)
+
+const time = document.getElementById('time')
+
+const testtime = document.createElement('p')
+testtime.innerHTML = test[0].time
+time.appendChild(testtime)
+
+const mainscore = document.getElementById('mainscore')
+
+const insertmainscore = document.createElement('p')
+insertmainscore.innerText = `${test[0].hp * test[0].score} 점`
+mainscore.appendChild(insertmainscore)
