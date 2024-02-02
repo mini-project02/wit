@@ -28,13 +28,12 @@ body {
   align-items: center;
 }
 
-.nav img {
+.nav a img {
   margin-top: 10px;
 }
 
-.nav svg {
+.nav div img {
   width: 40px;
-  color: #000;
 }
 
 .quiz {

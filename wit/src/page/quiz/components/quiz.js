@@ -20,7 +20,7 @@ class Quiz {
 
   async fetchData() {
     const subject = this.#player.getSubject()
-    const res = await (await fetch('./data.json')).json()
+    const res = await (await fetch('/wit/src/data.json')).json()
     const quizs = res.filter((data) => data.subject === subject).map((data) => data.quizs)
     this.#quizData = quizs[0]
     this.render()
@@ -107,7 +107,7 @@ class Quiz {
     const hpField = document.querySelector('.hp-field')
     hpField.innerHTML = ''
     for (let i = 0; i < this.#player.getHp(); i++) {
-      hpField.innerHTML += `<div><img src="../../public/red-heart-svgrepo-com.svg" alt="heart" /></div>`
+      hpField.innerHTML += `<div><img src="../../images/red-heart-svgrepo-com.svg" alt="heart" /></div>`
     }
   }
 
@@ -116,7 +116,7 @@ class Quiz {
     const broken = document.querySelector('.hp-field>div>img')
     if (broken) {
       hpField.classList.add('heartBroken')
-      broken.src = '../../public/broken-heart-svgrepo-com.svg'
+      broken.src = '../../images/broken-heart-svgrepo-com.svg'
       setTimeout(() => {
         hpField.classList.remove('heartBroken')
       }, 1000)
