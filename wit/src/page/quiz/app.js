@@ -2,7 +2,7 @@ import Quiz from './components/quiz.js'
 
 const $imgBox = document.querySelector('.img-box')
 
-// test localstorage data
+// 테스트 주석
 window.addEventListener('load', () => {
   const data = {
     name: 'jun',
