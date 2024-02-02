@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="result.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="navbar">
+      <img id="navimg" />
+      <h2>메뉴</h2>
+    </div>
+    <div id="container">
+      <div id="recordbox">
+        <div id="lefthp">
+          <h2 class="text">남은체력:</h2>
+        </div>
+        <hr />
+        <div id="correctquiz">
+          <h2 class="text">맞춘문제수:</h2>
+        </div>
+        <hr />
+        <div id="time">
+          <h2 class="text">경과시간:</h2>
+        </div>
+      </div>
+
+      <div id="scorebox">
+        <img id="userimg" />
+        <p id="username">ㅇㅇㅇ 님의 점수는?</p>
+        <div id="mainscore"></div>
+        <div id="commend">참잘했어요</div>
+      </div>
+      <div id="sharebox">
+        <button id="togooz">oz코딩스쿨</button>
+        <button id="togohome">홈으로</button>
+        <button id="togolink" style="color: white" onclick="clip()">URL 복사</button>
+      </div>
+    </div>
+
+    <script src="result.js"></script>
+  </body>
+</html>
