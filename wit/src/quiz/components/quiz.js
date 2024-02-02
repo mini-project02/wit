@@ -40,6 +40,7 @@ class Quiz {
       } else {
         this.#player.reduceHp()
         this.nextStep()
+        this.heartBroken()
       }
     })
   }
@@ -57,7 +58,10 @@ class Quiz {
     }
 
     this.answer()
-    this.createHeart()
+
+    setTimeout(() => {
+      this.createHeart()
+    }, 1000)
 
     setTimeout(() => {
       this.#player.levelUp()
@@ -103,18 +107,19 @@ class Quiz {
     const hpField = document.querySelector('.hp-field')
     hpField.innerHTML = ''
     for (let i = 0; i < this.#player.getHp(); i++) {
-      hpField.innerHTML += `<div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"
-                />
-              </svg>
-            </div>`
+      hpField.innerHTML += `<div><img src="../../public/red-heart-svgrepo-com.svg" alt="heart" /></div>`
+    }
+  }
+
+  heartBroken() {
+    const hpField = document.querySelector('.hp-field')
+    const broken = document.querySelector('.hp-field>div>img')
+    if (broken) {
+      hpField.classList.add('heartBroken')
+      broken.src = '../../public/broken-heart-svgrepo-com.svg'
+      setTimeout(() => {
+        hpField.classList.remove('heartBroken')
+      }, 1000)
     }
   }
 
@@ -136,6 +141,7 @@ class Quiz {
 
         this.#player.reduceHp()
         this.nextStep()
+        this.heartBroken()
       }
     }, 1000)
   }
