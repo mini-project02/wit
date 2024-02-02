@@ -1,0 +1,173 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0075ff;
+}
+
+.nav {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px 33px 5px;
+  background-color: #0075ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav img {
+  margin-top: 10px;
+}
+
+.nav svg {
+  width: 40px;
+  color: #000;
+}
+
+.quiz {
+  width: 1200px;
+  height: 630px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 40px;
+}
+
+.left-section {
+  width: 590px;
+  height: 630px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-section .img-box {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.right-section {
+  position: relative;
+  width: 610px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hp-field {
+  position: absolute;
+  top: 70px;
+  right: 80px;
+  display: flex;
+  gap: 10px;
+}
+
+.hp-field.heartBroken > div:nth-child(1) {
+  animation: heartBroken 0.2s infinite;
+}
+
+@keyframes heartBroken {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}
+
+.hp-field img {
+  width: 40px;
+  height: 40px;
+  color: #ff0000;
+  animation: rotateAnimation 1s infinite;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.quiz-form .quiz-input {
+  width: 480px;
+  font-size: 32px;
+  border: none;
+  outline: none;
+  text-align: center;
+  caret-color: #888;
+  letter-spacing: 2px;
+}
+
+.quiz-timer {
+  width: 480px;
+  height: 8px;
+  border-radius: 40px;
+  margin-top: 20px;
+}
+
+.quiz-timer .current-timer {
+  width: 100%;
+  height: 100%;
+  background-color: #0075ff;
+  margin: 0 auto;
+  border-radius: 40px;
+  transition: all 1s linear;
+}
+
+.quiz-answer {
+  margin-bottom: 50px;
+  width: 630px;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-answer > div {
+  width: 62px;
+  height: 100%;
+  background-color: #ffc700;
+  border: 4px solid #000;
+  border-radius: 17px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.quiz-answer > div.green {
+  background-color: #4dbf77;
+  color: #fff;
+}
+
+.quiz-answer > div.red {
+  background-color: #e63946;
+  color: #fff;
+}

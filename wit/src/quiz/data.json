@@ -1,0 +1,65 @@
+[
+  {
+    "subject": "programming",
+    "quizs": [
+      { "img": "../../public/css.png", "answer": "CSS" },
+      { "img": "../../public/dgango.png", "answer": "django" },
+      { "img": "../../public/docker.png", "answer": "docker" },
+      { "img": "../../public/keras.png", "answer": "Keras" },
+      { "img": "../../public/python.png", "answer": "python" },
+      { "img": "../../public/r.png", "answer": "R" },
+      { "img": "../../public/ruby.png", "answer": "Ruby" },
+      { "img": "../../public/swift.png", "answer": "Swift" },
+      { "img": "../../public/dgango.png", "answer": "D" },
+      { "img": "../../public/ts.png", "answer": "TypeScript" }
+    ]
+  },
+
+  {
+    "subject": "test",
+    "quizs": [
+      { "img": "../../public/css.png", "answer": "CSS" },
+      { "img": "../../public/dgango.png", "answer": "django" },
+      { "img": "../../public/docker.png", "answer": "docker" },
+      { "img": "../../public/keras.png", "answer": "Keras" },
+      { "img": "../../public/python.png", "answer": "python" },
+      { "img": "../../public/r.png", "answer": "R" },
+      { "img": "../../public/ruby.png", "answer": "Ruby" },
+      { "img": "../../public/swift.png", "answer": "Swift" },
+      { "img": "../../public/dgango.png", "answer": "D" },
+      { "img": "../../public/ts.png", "answer": "TypeScript" }
+    ]
+  },
+
+  {
+    "subject": "test2",
+    "quizs": [
+      { "img": "../../public/css.png", "answer": "CSS" },
+      { "img": "../../public/dgango.png", "answer": "django" },
+      { "img": "../../public/docker.png", "answer": "docker" },
+      { "img": "../../public/keras.png", "answer": "Keras" },
+      { "img": "../../public/python.png", "answer": "python" },
+      { "img": "../../public/r.png", "answer": "R" },
+      { "img": "../../public/ruby.png", "answer": "Ruby" },
+      { "img": "../../public/swift.png", "answer": "Swift" },
+      { "img": "../../public/dgango.png", "answer": "D" },
+      { "img": "../../public/ts.png", "answer": "TypeScript" }
+    ]
+  },
+
+  {
+    "subject": "test3",
+    "quizs": [
+      { "img": "../../public/css.png", "answer": "CSS" },
+      { "img": "../../public/dgango.png", "answer": "django" },
+      { "img": "../../public/docker.png", "answer": "docker" },
+      { "img": "../../public/keras.png", "answer": "Keras" },
+      { "img": "../../public/python.png", "answer": "python" },
+      { "img": "../../public/r.png", "answer": "R" },
+      { "img": "../../public/ruby.png", "answer": "Ruby" },
+      { "img": "../../public/swift.png", "answer": "Swift" },
+      { "img": "../../public/dgango.png", "answer": "D" },
+      { "img": "../../public/ts.png", "answer": "TypeScript" }
+    ]
+  }
+]
