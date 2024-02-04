@@ -31,86 +31,116 @@
 //   console.log('경과 시간:', minutesDifference, '분', secondsDifference, '초')
 // })
 
-//링크 공유
-
-function clip() {
-  var url = '' // <a>태그에서 호출한 함수인 clip 생성
-  var textarea = document.createElement('textarea')
-  //url 변수 생성 후, textarea라는 변수에 textarea의 요소를 생성
-
-  document.body.appendChild(textarea) //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
-  url = window.document.location.href //url에는 현재 주소값을 넣어줌
-  textarea.value = url // textarea 값에 url를 넣어줌
-  textarea.select() //textarea를 설정
-
-  document.body.removeChild(textarea) //extarea 요소를 없애줌
-
-  alert('URL이 복사되었습니다.') // 알림창
-}
-
-// const facebook = document.getElementById('facebook')
-
-// function togonaver() {
-//   facebook.addEventListener('click', function () {
-//     alert('asdfasdfasdf')
-//   })
-// }
-
+//--------oz 홈페이지 가기 ------------
 const togooz = document.getElementById('togooz')
 
 togooz.addEventListener('click', function () {
   window.open('https://ozcodingschool.com/', '_blank')
 })
+//--------oz 홈페이지 가기 ------------
 
+//-------- 홈 가기 ------------
+
+const togohome = document.getElementById('togohome')
+
+togohome.addEventListener('click', function () {
+  window.location.href = 'page/index.html'
+})
+
+//-------- 홈 가기 ------------
+
+//------연습데이터--------------
 const test = [
   {
     name: '강주원',
-    hp: 30,
     score: 6,
-    time: 55,
+    starttime: new Date(),
+    endtime: new Date(),
+    hp: 5,
   },
   {
     name: '홍길동',
-    hp: 50,
     score: 8,
     time: new Date(),
+    hp: 3,
   },
   {
     name: '김영희',
-    hp: 100,
     score: 7,
     time: new Date(),
+    hp: 9,
   },
   {
     name: '이철수',
-    hp: 99,
     score: 9,
     time: new Date(),
+    hp: 5,
   },
   {
     name: '박미영',
-    hp: 30,
     score: 5,
     time: new Date(),
+    hp: 10,
   },
 ]
+//------연습데이터--------------
 
-console.log(test[0])
+//------------남은체력(하트) 가져오기---------------
+const lefthp = document.getElementById('lefthp')
+const recordhp = test[0].hp
+
+if (recordhp === 5) {
+  heartcount(5)
+} else if (recordhp === 4) {
+  heartcount(4)
+} else if (recordhp === 3) {
+  heartcount(3)
+} else if (recordhp === 2) {
+  heartcount(2)
+} else if (recordhp === 1) {
+  heartcount(1)
+} else {
+}
+function heartcount(count) {
+  for (let i = 0; i < count; i++) {
+    const leftheart = document.createElement('p')
+    leftheart.innerHTML = '❤️'
+    lefthp.appendChild(leftheart)
+  }
+}
+
+//------------남은체력(하트) 가져오기---------------
+
+//---------------맞은 문제수 표시----------------------
 
 const correctquiz = document.getElementById('correctquiz')
 
 const icon = document.createElement('p')
-icon.innerText = `${test[0].score} 입니다 `
+icon.innerText = `${test[0].score} 개 `
 correctquiz.appendChild(icon)
 
+//---------------맞은 문제수 표시----------------------
+
+//---------------경과시간 표시----------------------
 const time = document.getElementById('time')
 
+const startTime = new Date(test[0].starttime)
+const endTime = new Date(test[0].endtime)
+
+const timeDifference = endTime - startTime
+const minutes = Math.floor(timeDifference / (1000 * 60))
+const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
+
 const testtime = document.createElement('p')
-testtime.innerHTML = test[0].time
+testtime.innerHTML = `(${minutes}분 ${seconds}초)`
 time.appendChild(testtime)
 
+//---------------경과시간 표시----------------------
+
+//------------------총점수-------------------
 const mainscore = document.getElementById('mainscore')
 
 const insertmainscore = document.createElement('p')
 insertmainscore.innerText = `${test[0].hp * test[0].score} 점`
 mainscore.appendChild(insertmainscore)
+//------------------총점수-------------------

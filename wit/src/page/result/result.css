@@ -29,7 +29,7 @@ body {
   align-items: center;
 }
 #navimg {
-  background-image: url('../../public/wit.png');
+  background-image: url('../../images/wit.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 57px;
@@ -74,6 +74,29 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+#lefthp > p {
+  margin-top: 25px;
+  margin-left: 15px;
+  font-size: 50px;
+  display: inline-block;
+}
+#correctquiz > p {
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+#time > p {
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+  margin-top: 20px;
+}
 #scorebox {
   display: flex;
   flex-direction: column;
@@ -85,7 +108,7 @@ body {
   width: 178px;
   height: 178px;
   border-radius: 50%;
-  background-image: url(../../public/usericon.png);
+  background-image: url('../../images/usericon.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
