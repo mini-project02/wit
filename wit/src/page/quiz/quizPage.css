@@ -7,9 +7,11 @@ body {
 }
 
 .container {
+  position: relative;
   height: 100%;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-rows: 80px 1fr;
   justify-content: center;
   align-items: center;
   background-color: #0075ff;
@@ -17,10 +19,8 @@ body {
 
 .nav {
   box-sizing: border-box;
-  position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
+  height: 80px;
   padding: 10px 33px 5px;
   background-color: #0075ff;
   display: flex;
@@ -37,12 +37,12 @@ body {
 }
 
 .quiz {
-  position: relative;
   width: 1200px;
   height: 630px;
   display: flex;
   align-items: center;
   background-color: #fff;
+  margin-top: -80px;
   padding: 40px;
   border-radius: 40px;
   overflow: hidden;
@@ -135,8 +135,8 @@ body {
 }
 
 .hp-field img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   color: #ff0000;
   animation: rotateAnimation 1s infinite;
 }
@@ -210,4 +210,41 @@ body {
 .quiz-answer > div.red {
   background-color: #e63946;
   color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  /** 모바일 세로 */
+  .quiz {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    border-radius: 0;
+    padding-top: 40px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
+  .quiz-answer {
+    width: 350px;
+    height: 42px;
+  }
+
+  .quiz-answer > div {
+    width: 42px;
+    height: 42px;
+    font-size: 25px;
+    border: 3px solid #000;
+  }
+
+  .hp-field {
+    position: absolute;
+    top: 40px;
+    right: 130px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .quiz-timer {
+    width: 300px;
+  }
 }
