@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
   const data = {
     name: 'jun',
     subject: 'programming',
-    currentTime: new Date(),
+    startTime: new Date(),
   }
   localStorage.setItem('player', JSON.stringify(data))
 })

@@ -1,4 +1,5 @@
 import Player from './player.js'
+import Toast from './toast.js'
 
 class Quiz {
   #player
@@ -16,6 +17,7 @@ class Quiz {
 
     this.fetchData()
     this.submitEvent()
+    this.homeClickEvent()
   }
 
   async fetchData() {
@@ -24,6 +26,18 @@ class Quiz {
     const quizs = res.filter((data) => data.subject === subject).map((data) => data.quizs)
     this.#quizData = quizs[0]
     this.render()
+  }
+
+  homeClickEvent() {
+    const homBtn = document.querySelector('.nav a')
+    homBtn.addEventListener('click', (e) => {
+      let result = confirm('퀴즈를 포기하고 홈으로 돌아가시겠습니까?')
+
+      if (result) {
+        localStorage.removeItem('player')
+        window.location.href = '/wit/src/page/quiz_home/quiz_home.html'
+      }
+    })
   }
 
   submitEvent() {
@@ -36,8 +50,11 @@ class Quiz {
       clearInterval(this.#interval)
 
       if (answer === $quizInput.value.toLowerCase()) {
+        new Toast('correct', 'green').render()
+        this.#player.correctAnswer()
         this.nextStep()
       } else {
+        new Toast('wrong', 'red').render()
         this.#player.reduceHp()
         this.nextStep()
         this.heartBroken()
@@ -54,6 +71,7 @@ class Quiz {
     if (this.#player.endGame(this.#quizData.length)) {
       this.createHeart()
       this.answer()
+      this.#player.goResultPage()
       return
     }
 
@@ -138,6 +156,7 @@ class Quiz {
 
       if (this.#timer === -1) {
         clearInterval(this.#interval)
+        new Toast('timeover', 'orange').render()
 
         this.#player.reduceHp()
         this.nextStep()
