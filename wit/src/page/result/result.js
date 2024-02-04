@@ -57,90 +57,157 @@ const test = [
     starttime: new Date(),
     endtime: new Date(),
     hp: 5,
+    isSuccess: true,
   },
   {
     name: '홍길동',
     score: 8,
     time: new Date(),
     hp: 3,
+    isSuccess: false,
   },
   {
     name: '김영희',
     score: 7,
     time: new Date(),
-    hp: 9,
+    hp: 5,
+    isSuccess: true,
   },
   {
     name: '이철수',
     score: 9,
     time: new Date(),
     hp: 5,
+    isSuccess: true,
   },
   {
     name: '박미영',
     score: 5,
     time: new Date(),
     hp: 10,
+    isSuccess: true,
   },
 ]
 //------연습데이터--------------
 
-//------------남은체력(하트) 가져오기---------------
-const lefthp = document.getElementById('lefthp')
-const recordhp = test[0].hp
+//------체력 0 -------------
+let j = 0
+const testfalse = test[j].isSuccess
+console.log(testfalse)
+if (testfalse == false) {
+  const time = document.getElementById('time')
 
-if (recordhp === 5) {
-  heartcount(5)
-} else if (recordhp === 4) {
-  heartcount(4)
-} else if (recordhp === 3) {
-  heartcount(3)
-} else if (recordhp === 2) {
-  heartcount(2)
-} else if (recordhp === 1) {
-  heartcount(1)
+  const startTime = new Date(test[j].starttime)
+  const endTime = new Date(test[j].endtime)
+
+  const timeDifference = endTime - startTime
+  const minutes = Math.floor(timeDifference / (1000 * 60))
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
+
+  const testtime = document.createElement('p')
+  testtime.innerHTML = `(${minutes}분 ${seconds}초)`
+  time.appendChild(testtime)
+
+  const correctquiz = document.getElementById('correctquiz')
+
+  const icon = document.createElement('p')
+  icon.innerText = `${test[j].score} 개 `
+  correctquiz.appendChild(icon)
+
+  const username = document.getElementById('username')
+
+  const getname = document.createElement('p')
+  getname.innerText = `${test[j].name} 님의 점수는?`
+  username.appendChild(getname)
+
+  const mainscore = document.getElementById('mainscore')
+
+  const insertmainscore = document.createElement('p')
+  insertmainscore.innerText = `실패`
+  mainscore.appendChild(insertmainscore)
 } else {
-}
-function heartcount(count) {
-  for (let i = 0; i < count; i++) {
-    const leftheart = document.createElement('p')
-    leftheart.innerHTML = '❤️'
-    lefthp.appendChild(leftheart)
+  //------체력 0 -------------
+
+  //------------남은체력(하트) 가져오기---------------
+  const lefthp = document.getElementById('lefthp')
+  const recordhp = test[j].hp
+
+  if (recordhp === 5) {
+    heartcount(5)
+  } else if (recordhp === 4) {
+    heartcount(4)
+  } else if (recordhp === 3) {
+    heartcount(3)
+  } else if (recordhp === 2) {
+    heartcount(2)
+  } else if (recordhp === 1) {
+    heartcount(1)
+  } else {
   }
+  function heartcount(count) {
+    for (let i = 0; i < count; i++) {
+      const leftheart = document.createElement('p')
+      leftheart.innerHTML = '❤️'
+      lefthp.appendChild(leftheart)
+    }
+  }
+
+  //------------남은체력(하트) 가져오기---------------
+
+  //---------------맞은 문제수 표시----------------------
+
+  const correctquiz = document.getElementById('correctquiz')
+
+  const icon = document.createElement('p')
+  icon.innerText = `${test[j].score} 개 `
+  correctquiz.appendChild(icon)
+
+  //---------------맞은 문제수 표시----------------------
+
+  //---------------경과시간 표시----------------------
+  const time = document.getElementById('time')
+
+  const startTime = new Date(test[j].starttime)
+  const endTime = new Date(test[j].endtime)
+
+  const timeDifference = endTime - startTime
+  const minutes = Math.floor(timeDifference / (1000 * 60))
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
+
+  const testtime = document.createElement('p')
+  testtime.innerHTML = `(${minutes}분 ${seconds}초)`
+  time.appendChild(testtime)
+
+  //---------------경과시간 표시----------------------
+
+  //-----------------이름 가져오기 ---------------------
+  const username = document.getElementById('username')
+
+  const getname = document.createElement('p')
+  getname.innerText = `${test[j].name} 님의 점수는?`
+  username.appendChild(getname)
+  //-----------------이름 가져오기 ---------------------
+
+  //------------------총점수-------------------
+  const mainscore = document.getElementById('mainscore')
+
+  const insertmainscore = document.createElement('p')
+  insertmainscore.innerText = `${test[j].hp * test[j].score} 점`
+  mainscore.appendChild(insertmainscore)
+  //------------------총점수-------------------
+
+  //--------------링크 공유하기-----------------
+  function clip() {
+    var url = ''
+    var textarea = document.createElement('textarea')
+    document.body.appendChild(textarea)
+    url = window.document.location.href
+    textarea.value = url
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+    alert('URL이 복사되었습니다.')
+  }
+
+  //--------------링크 공유하기-----------------
 }
-
-//------------남은체력(하트) 가져오기---------------
-
-//---------------맞은 문제수 표시----------------------
-
-const correctquiz = document.getElementById('correctquiz')
-
-const icon = document.createElement('p')
-icon.innerText = `${test[0].score} 개 `
-correctquiz.appendChild(icon)
-
-//---------------맞은 문제수 표시----------------------
-
-//---------------경과시간 표시----------------------
-const time = document.getElementById('time')
-
-const startTime = new Date(test[0].starttime)
-const endTime = new Date(test[0].endtime)
-
-const timeDifference = endTime - startTime
-const minutes = Math.floor(timeDifference / (1000 * 60))
-const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
-
-const testtime = document.createElement('p')
-testtime.innerHTML = `(${minutes}분 ${seconds}초)`
-time.appendChild(testtime)
-
-//---------------경과시간 표시----------------------
-
-//------------------총점수-------------------
-const mainscore = document.getElementById('mainscore')
-
-const insertmainscore = document.createElement('p')
-insertmainscore.innerText = `${test[0].hp * test[0].score} 점`
-mainscore.appendChild(insertmainscore)
-//------------------총점수-------------------
