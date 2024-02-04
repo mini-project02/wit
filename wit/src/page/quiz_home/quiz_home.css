@@ -48,6 +48,8 @@
 .main {
   width: 100vw;
   height: auto;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   padding: 0 6.71875vw;
 }
@@ -62,7 +64,7 @@
 
 .main-header select {
   border: none;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(60, 0, 255, 0);
 }
 
 #category-selector {
@@ -71,4 +73,28 @@
 
 #order-selector {
   font-size: 0.975vw;
+}
+
+#main-quiz-button-container {
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.quiz-button {
+  width: 26.875vw;
+  height: 15.234375vw;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 2.34375vw;
+  margin-top: 2.96875vw;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 2.5vw;
+  color: black;
+}
+
+.quiz-button h1 {
+  /* filter: invert(90%); */
+  mix-blend-mode: darken;
 }

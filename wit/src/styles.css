@@ -2,7 +2,7 @@
 @import 'fonts.css';
 
 /* screens */
-@import 'screens/login.css';
-@import 'screens/quiz_home.css';
+@import './page/index.css';
+@import './page/quiz_home/quiz_home.css';
 
 /* components */
