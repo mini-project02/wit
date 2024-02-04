@@ -9,5 +9,3 @@ function getUserNickname() {
   localStorage.setItem('player', JSON.stringify(player))
   location.href = 'quiz_home/quiz_home.html'
 }
-
-//이름바꿈

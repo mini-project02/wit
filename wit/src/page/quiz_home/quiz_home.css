@@ -80,6 +80,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  box-sizing: content-box;
+  padding-bottom: 2.96875vw;
 }
 
 .quiz-button {
@@ -89,6 +91,7 @@
   border: none;
   border-radius: 2.34375vw;
   margin-top: 2.96875vw;
+  cursor: pointer;
   font-family: 'Roboto Flex', sans-serif;
   font-size: 2.5vw;
   color: black;
