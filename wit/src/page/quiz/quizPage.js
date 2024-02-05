@@ -2,7 +2,6 @@ import Quiz from './components/quiz.js'
 
 const $imgBox = document.querySelector('.img-box')
 
-// 테스트 주석
 window.addEventListener('load', () => {
   const data = {
     name: 'jun',
