@@ -214,7 +214,6 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  /** 모바일 세로 */
   .quiz {
     width: 100%;
     height: 100%;
