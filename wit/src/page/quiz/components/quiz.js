@@ -35,7 +35,7 @@ class Quiz {
 
       if (result) {
         localStorage.removeItem('player')
-        window.location.href = '/wit/src/page/quiz_home/quiz_home.html'
+        window.location.href = '/wit/src/page/index.html'
       }
     })
   }
