@@ -4,31 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>wit</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../styles.css" rel="stylesheet" />
   </head>
   <body>
     <div class="loginhome">
-      <img id="title" src="../public/wit-shadow.png" />
-      <div class="login-container">
-        <h1 id="login-title">
-          <img src="../public/wit.png" />에 오신 여러분들환영합니다! :)
-        </h1>
-        <p id="login-subtitle">
-          이곳은 이미지의 비밀들을 풀어내는 몰입도 높은 퀴즈 세계입니다.<br />
-          퀴즈를 풀면서 숨겨진 정보를 찾아내고, 정확한 답을 맞춰보세요
-        </p>
-        <form id="login-form" onsubmit="getUserNickname(); return false;">
-          <input
-            type="text"
-            id="login-input"
-            placeholder="닉네임을 입력해주세요"
-            maxlength="8"
-            required
-          />
-          <button id="login-btn">START</button>
-        </form>
+      <div class="loginhome-container">
+        <div class="title-container">
+          <img id="title" src="../images/wit-shadow.png" />
+        </div>
+        <div class="login-container">
+          <h1 id="login-title">
+            <img src="../images/wit-title.png" />에 오신 여러분들환영합니다! :)
+          </h1>
+          <p id="login-subtitle">
+            이곳은 이미지의 비밀들을 풀어내는 몰입도 높은 퀴즈 세계입니다.<br />
+            퀴즈를 풀면서 숨겨진 정보를 찾아내고, 정확한 답을 맞춰보세요
+          </p>
+          <form id="login-form" onsubmit="getUserNickname(); return false;">
+            <input
+              type="text"
+              id="login-input"
+              placeholder="닉네임을 입력해주세요"
+              maxlength="8"
+              required
+            />
+            <button id="login-btn">START</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>
-  <script src="js/userController.js"></script>
+  <script src="app.js"></script>
 </html>

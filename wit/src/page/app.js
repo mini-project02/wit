@@ -6,13 +6,6 @@ function getUserNickname() {
     startTime: '',
   }
 
-  console.log(loginInput.value)
   localStorage.setItem('player', JSON.stringify(player))
-  console.log('Before Redirect')
-  location.href = 'quiz_home.html'
-  console.log('After Redirect')
-}
-
-function createQuizBtn() {
-  const quizs = []
+  location.href = 'quiz_home/quiz_home.html'
 }
