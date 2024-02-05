@@ -9,6 +9,7 @@ class Player {
       hp: 5,
       endTime: 0,
       isSuccess: false,
+      correct: 0,
     }
   }
 
@@ -22,6 +23,10 @@ class Player {
 
   levelUp() {
     this.#player.level += 1
+  }
+
+  correctAnswer() {
+    this.#player.correct += 1
   }
 
   getHp() {
@@ -40,12 +45,20 @@ class Player {
 
   endGame(quizLen) {
     if (this.#player.level === quizLen || this.#player.hp <= 0) {
-      console.log('게임종료 -> result 페이지 이동')
       this.#player.endTime = new Date()
       return true
     }
-
     return false
+  }
+
+  goResultPage() {
+    let player = localStorage.getItem('player')
+    player = { ...JSON.parse(player), ...this.#player }
+    localStorage.setItem('player', JSON.stringify(player))
+
+    setTimeout(() => {
+      window.location.href = '/wit/src/page/result/result.html'
+    }, 2000)
   }
 }
 
