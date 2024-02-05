@@ -22,7 +22,7 @@ function createBtn() {
       quizBtn.classList.add('quiz-button')
       quizBtn.appendChild(quizBtnText)
 
-      quizBtn.style.backgroundColor = `rgba(${randomColor},85%)`
+      quizBtn.style.backgroundColor = `rgba(${randomColor},40%)`
 
       quizBtn.addEventListener('click', clickQuizBtn)
       quizBtnContainer.appendChild(quizBtn)

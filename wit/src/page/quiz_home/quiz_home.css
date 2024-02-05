@@ -59,7 +59,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 2.65625vw 0 3.4375vw;
+  padding: 3.4375vw 0 2.65625vw;
 }
 
 .main-header select {
@@ -90,7 +90,7 @@
   box-sizing: border-box;
   border: none;
   border-radius: 2.34375vw;
-  margin-top: 2.96875vw;
+  margin-bottom: 2.96875vw;
   cursor: pointer;
   font-family: 'Roboto Flex', sans-serif;
   font-size: 2.5vw;

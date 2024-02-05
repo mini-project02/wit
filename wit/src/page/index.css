@@ -1,85 +1,137 @@
 .loginhome {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
   background-color: #0075ff;
 }
 
+.loginhome-container {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  align-items: center;
+}
+
+.title-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #title {
-  width: 24.609375vw;
-  height: 13.72vw;
-  position: absolute;
-  left: 15vw;
+  width: 311px;
+  height: 176px;
   object-fit: contain;
 }
 
 .login-container {
-  width: 43.75vw;
-  height: 87.5vh;
+  width: 46%;
+  min-width: 483px;
+  height: 630px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 3.90625vw;
   background-color: white;
   border-radius: 2.34375vw;
   overflow-x: scroll;
 }
 
 #login-title {
-  width: 26.328125vw;
+  width: 337px;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 800;
-  font-size: 2.5vw;
-  letter-spacing: 0.1vw;
+  font-size: 32px;
+  letter-spacing: 1.28px;
 }
 
 #login-title img {
-  width: 6.25vw;
+  width: 80px;
   height: auto;
 }
 
 #login-subtitle {
-  width: 26.328125vw;
-  height: 2.65625vw;
-  margin-top: 2.1875vw;
+  width: 337px;
+  height: 34px;
+  margin-top: 28px;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
-  font-size: 0.859375vw;
-  line-height: 1.7375vw;
+  font-size: 11px;
+  line-height: 22.24px;
 }
 
 .login-container form {
   display: flex;
   flex-direction: column;
-  margin-top: 5.859375vw;
+  margin-top: 75px;
   overflow: auto;
 }
 
 #login-input {
-  width: 28.140625vw;
-  height: 3.75vw;
+  width: 361px;
+  height: 48px;
   padding: 1vw;
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #ffc700;
   font-family: 'Roboto Flex', sans-serif;
-  font-size: 1.3vw;
+  font-size: 16.5px;
 }
 
 #login-btn {
-  width: 28.140625vw;
-  height: 6.09375vw;
-  margin-top: 3.90625vw;
-  border-radius: 6vh;
+  width: 361px;
+  height: 78px;
+  margin-top: 50px;
+  border-radius: 77px;
   border: none;
   background-color: black;
   color: #ffc700;
   font-family: 'Roboto Flex', sans-serif;
-  letter-spacing: 0.2vw;
+  letter-spacing: 2.56px;
   font-weight: 900;
-  font-size: 3.125vw;
+  font-size: 40px;
+}
+
+@media screen and (orientation: portrait) {
+  .loginhome {
+    width: 100%;
+    height: 100%;
+  }
+
+  .loginhome-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  #title {
+    width: 34.57%;
+    min-width: 122px;
+  }
+
+  .title-container {
+    width: 100%;
+    height: fit-content;
+    margin: 12.5% 0 7.5%;
+  }
+
+  .login-container {
+    width: 79.43vw;
+    height: 116.85vw;
+    border-radius: 5%;
+  }
+
+  #login-title {
+    width: 45.14%;
+    font-size: 130%;
+    line-height: 120%;
+  }
+
+  #login-title img {
+    width: 25%;
+  }
 }

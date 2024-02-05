@@ -6,3 +6,8 @@
 @import './page/quiz_home/quiz_home.css';
 
 /* components */
+
+html,
+body {
+  height: 100%;
+}
