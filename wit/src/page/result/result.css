@@ -29,7 +29,7 @@ body {
   align-items: center;
 }
 #navimg {
-  background-image: url('../../public/wit.png');
+  background-image: url('../../images/wit.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 57px;
@@ -38,7 +38,7 @@ body {
 
 #container {
   width: 100%;
-  height: 100%;
+  height: 900px;
   background-color: white;
   border-radius: 30px;
   margin: 0 auto;
@@ -74,6 +74,35 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+#lefthp > p {
+  margin-top: 25px;
+  margin-left: 15px;
+  font-size: 50px;
+  display: inline-block;
+}
+#correctquiz > p {
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+#time > p {
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+#username > p {
+  font-size: 26px;
+  margin-top: 30px;
+}
+
 #scorebox {
   display: flex;
   flex-direction: column;
@@ -85,13 +114,15 @@ body {
   width: 178px;
   height: 178px;
   border-radius: 50%;
-  background-image: url(../../public/usericon.png);
+  background-image: url('../../images/usericon.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #mainscore {
   font-size: 75px;
+  font-weight: bold;
+  margin: 20px;
 }
 
 #username,
@@ -112,36 +143,69 @@ body {
   height: 116px;
   border-radius: 50%;
   border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+#togooz:hover,
+#togohome:hover,
+#togolink:hover {
+  transform: scale(1.1, 1.1);
 }
 
 #togooz {
   background-color: #9d9d9d;
+  color: white;
 }
 
 #togohome {
   background-color: #ffc700;
+  color: white;
 }
 #togolink {
   background-color: black;
+  color: white;
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    padding: 0;
+    width: 390px;
+    height: 844px;
+  }
   #container {
     width: 313px;
     height: 507px;
+    display: block;
   }
-  .text {
-    font-size: 18px;
-    margin-left: 10px;
+  #navbar {
+    padding: 10px;
+  }
+  #recordbox {
+    display: none;
   }
 
-  #scorebox {
+  #scorebox,
+  #sharebox {
     border: none;
+  }
+  #scorebox {
+    display: inline;
+    text-align: center;
+    margin-top: 70px;
+  }
+  #sharebox {
+    display: inline-block;
+    width: 313px;
+    height: 100px;
+    text-align: center;
+    margin-top: 70px;
   }
 
   #scorebox > img {
     width: 100px;
     height: 100px;
+    margin-left: 110px;
+    margin-top: 50px;
   }
 
   #mainscore {
@@ -158,5 +222,6 @@ body {
   #togolink {
     width: 60px;
     height: 60px;
+    font-size: 13px;
   }
 }
