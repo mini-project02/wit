@@ -45,49 +45,46 @@ const togohome = document.getElementById('togohome')
 
 togohome.addEventListener('click', function () {
   window.location.href = 'page/index.html'
+  localStorage.clear()
 })
 
 //-------- 홈 가기 ------------
 
 //------연습데이터--------------
+const currentTime = new Date()
 const test = [
   {
     name: '강주원',
-    score: 6,
-    starttime: new Date(),
-    endtime: new Date(),
+    subject: 'programming',
+    level: 1,
     hp: 5,
+    endTime: new Date(currentTime.getTime() + 5 * 60 * 1000),
+    startTime: new Date(),
     isSuccess: true,
+    correct: 9,
   },
   {
-    name: '홍길동',
-    score: 8,
-    time: new Date(),
-    hp: 3,
+    name: '장요한',
+    subject: 'programming',
+    level: 2,
+    hp: 0,
+    endTime: new Date() + 3000,
+    startTime: new Date(),
     isSuccess: false,
+    correct: 3,
   },
   {
-    name: '김영희',
-    score: 7,
-    time: new Date(),
-    hp: 5,
+    name: '박사민',
+    subject: 'programming',
+    level: 2,
+    hp: 1,
+    endTime: new Date() + 3000,
+    startTime: new Date(),
     isSuccess: true,
-  },
-  {
-    name: '이철수',
-    score: 9,
-    time: new Date(),
-    hp: 5,
-    isSuccess: true,
-  },
-  {
-    name: '박미영',
-    score: 5,
-    time: new Date(),
-    hp: 10,
-    isSuccess: true,
+    correct: 10,
   },
 ]
+
 //------연습데이터--------------
 
 //------체력 0 -------------
@@ -97,21 +94,21 @@ console.log(testfalse)
 if (testfalse == false) {
   const time = document.getElementById('time')
 
-  const startTime = new Date(test[j].starttime)
-  const endTime = new Date(test[j].endtime)
+  const startTime = new Date(test[j].startTime)
+  const endTime = new Date(test[j].endTime)
 
   const timeDifference = endTime - startTime
   const minutes = Math.floor(timeDifference / (1000 * 60))
   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
 
   const testtime = document.createElement('p')
-  testtime.innerHTML = `(${minutes}분 ${seconds}초)`
+  testtime.innerHTML = `${minutes}분 ${seconds}초`
   time.appendChild(testtime)
 
   const correctquiz = document.getElementById('correctquiz')
 
   const icon = document.createElement('p')
-  icon.innerText = `${test[j].score} 개 `
+  icon.innerText = `${test[j].correct} 개 `
   correctquiz.appendChild(icon)
 
   const username = document.getElementById('username')
@@ -159,7 +156,7 @@ if (testfalse == false) {
   const correctquiz = document.getElementById('correctquiz')
 
   const icon = document.createElement('p')
-  icon.innerText = `${test[j].score} 개 `
+  icon.innerText = `${test[j].correct} 개 `
   correctquiz.appendChild(icon)
 
   //---------------맞은 문제수 표시----------------------
@@ -167,15 +164,15 @@ if (testfalse == false) {
   //---------------경과시간 표시----------------------
   const time = document.getElementById('time')
 
-  const startTime = new Date(test[j].starttime)
-  const endTime = new Date(test[j].endtime)
+  const startTime = new Date(test[j].startTime)
+  const endTime = new Date(test[j].endTime)
 
   const timeDifference = endTime - startTime
   const minutes = Math.floor(timeDifference / (1000 * 60))
   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
 
   const testtime = document.createElement('p')
-  testtime.innerHTML = `(${minutes}분 ${seconds}초)`
+  testtime.innerHTML = `${minutes}분 ${seconds}초`
   time.appendChild(testtime)
 
   //---------------경과시간 표시----------------------
@@ -192,7 +189,11 @@ if (testfalse == false) {
   const mainscore = document.getElementById('mainscore')
 
   const insertmainscore = document.createElement('p')
-  insertmainscore.innerText = `${test[j].hp * test[j].score} 점`
+  plusscore = 0
+  if (minutes < 1) {
+    plusscore += 100
+  }
+  insertmainscore.innerText = `${test[j].hp * test[j].correct + plusscore}  점`
   mainscore.appendChild(insertmainscore)
   //------------------총점수-------------------
 
