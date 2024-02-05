@@ -29,7 +29,7 @@ class Quiz {
   }
 
   homeClickEvent() {
-    const homBtn = document.querySelector('.nav a')
+    const homBtn = document.querySelector('.homeBtn')
     homBtn.addEventListener('click', (e) => {
       let result = confirm('퀴즈를 포기하고 홈으로 돌아가시겠습니까?')
 

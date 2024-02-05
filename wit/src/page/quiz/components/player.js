@@ -57,7 +57,7 @@ class Player {
     localStorage.setItem('player', JSON.stringify(player))
 
     setTimeout(() => {
-      window.location.href = '/wit/src/page/result/result.html'
+      // window.location.href = '/wit/src/page/result/result.html'
     }, 2000)
   }
 }
