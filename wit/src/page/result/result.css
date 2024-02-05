@@ -17,7 +17,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 #navbar {
@@ -174,7 +173,7 @@ body {
   }
   #container {
     width: 313px;
-    height: 507px;
+    height: 700px;
     display: block;
   }
   #navbar {
@@ -191,14 +190,12 @@ body {
   #scorebox {
     display: inline;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 100px;
   }
   #sharebox {
-    display: inline-block;
     width: 313px;
-    height: 100px;
+    height: 300px;
     text-align: center;
-    margin-top: 70px;
   }
 
   #scorebox > img {
@@ -220,8 +217,113 @@ body {
   #togooz,
   #togohome,
   #togolink {
-    width: 60px;
+    border-radius: 10px;
+    width: 200px;
     height: 60px;
     font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  #sharebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #togooz,
+  #togohome,
+  #togolink {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: none;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  .text {
+    font-size: 52px;
+    margin-left: 30px;
+  }
+
+  #scorebox,
+  #sharebox {
+    border-left: 5px rgb(171, 171, 171) solid;
+  }
+
+  #recordbox,
+  #scorebox,
+  #sharebox {
+    width: 100%;
+    height: 600px;
+  }
+
+  #lefthp,
+  #correctquiz,
+  #time {
+    width: 400px;
+    height: 180px;
+
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #lefthp > p {
+    margin-top: 25px;
+    margin-left: 30px;
+    font-size: 50px;
+    display: inline-block;
+  }
+  #correctquiz > p {
+    font-size: 70px;
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  #time > p {
+    font-size: 70px;
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+
+  #username > p {
+    font-size: 35px;
+    margin-top: 30px;
+  }
+
+  #scorebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #scorebox > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('../../images/usericon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #mainscore {
+    font-size: 100px;
+    font-weight: bold;
+    margin: 20px;
+  }
+
+  #username,
+  #commend {
+    font-size: 33px;
   }
 }
