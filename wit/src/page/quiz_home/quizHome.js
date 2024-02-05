@@ -49,5 +49,5 @@ function clickQuizBtn(event) {
   player.startTime = startTime
 
   localStorage.setItem('player', JSON.stringify(player))
-  location.href = '../quiz/quiz.html'
+  // location.href = '../quiz/quiz.html'
 }
