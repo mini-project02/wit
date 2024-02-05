@@ -173,7 +173,7 @@ togooz.addEventListener('click', function () {
 const togohome = document.getElementById('togohome')
 
 togohome.addEventListener('click', function () {
-  window.location.href = 'page/index.html'
+  window.location.href = '/wit/src/page/index.html'
   localStorage.clear()
 })
 //-------- 홈 가기 ------------
