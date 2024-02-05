@@ -112,21 +112,6 @@ if (testfalse == false) {
   insertmainscore.innerText = `${player.hp * player.correct + plusscore}  점`
   mainscore.appendChild(insertmainscore)
   //------------------총점수-------------------
-
-  //--------------링크 공유하기-----------------
-  function clip() {
-    var url = ''
-    var textarea = document.createElement('textarea')
-    document.body.appendChild(textarea)
-    url = window.document.location.href
-    textarea.value = url
-    textarea.select()
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
-    alert('URL이 복사되었습니다.')
-  }
-
-  //--------------링크 공유하기-----------------
 }
 //--------oz 홈페이지 가기 ------------
 const togooz = document.getElementById('togooz')
@@ -145,3 +130,17 @@ togohome.addEventListener('click', function () {
   localStorage.clear()
 })
 //-------- 홈 가기 ------------
+//--------------링크 공유하기-----------------
+// function clip() {
+//   var url = ''
+//   var textarea = document.createElement('textarea')
+//   document.body.appendChild(textarea)
+//   url = window.document.location.href
+//   textarea.value = url
+//   textarea.select()
+//   document.execCommand('copy')
+//   document.body.removeChild(textarea)
+//   alert('URL이 복사되었습니다.')
+// }
+
+//--------------링크 공유하기-----------------

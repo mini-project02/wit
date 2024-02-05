@@ -12,7 +12,7 @@ body {
   margin: 0;
   box-sizing: border-box;
 
-  padding: 0px 70px 70px 70px;
+  padding: 30px 70px 70px 70px;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -88,12 +88,18 @@ body {
   margin-right: 10px;
   margin-top: 20px;
 }
+#correctquiz > h2 {
+  margin-top: 20px;
+}
 #time > p {
   font-size: 64px;
   font-weight: bold;
   display: flex;
   justify-content: end;
   margin-right: 10px;
+  margin-top: 20px;
+}
+#time > h2 {
   margin-top: 20px;
 }
 
@@ -275,7 +281,7 @@ body {
   #lefthp > p {
     margin-top: 25px;
     margin-left: 30px;
-    font-size: 50px;
+    font-size: 49px;
     display: inline-block;
   }
   #correctquiz > p {
