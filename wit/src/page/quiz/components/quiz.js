@@ -7,6 +7,7 @@ class Quiz {
   #timer
   #interval
   #quizData
+  #progress
 
   constructor(target, name, subject) {
     this.#player = new Player(name, subject)
@@ -14,6 +15,7 @@ class Quiz {
     this.#timer = 10
     this.#interval = 0
     this.#quizData = []
+    this.#progress = true
 
     this.fetchData()
     this.submitEvent()
@@ -42,10 +44,13 @@ class Quiz {
 
   submitEvent() {
     const $quizForm = document.querySelector('.quiz-form')
-    const $quizInput = document.querySelector('.quiz-input')
+    $quizForm.addEventListener('submit', (e) => this.formEvent(e))
+  }
 
-    $quizForm.addEventListener('submit', (e) => {
-      e.preventDefault()
+  formEvent(e) {
+    e.preventDefault()
+    if (this.#progress) {
+      const $quizInput = document.querySelector('.quiz-input')
       const answer = this.#quizData[this.#player.getLevel()]?.answer.trim().toLowerCase()
       clearInterval(this.#interval)
 
@@ -59,7 +64,9 @@ class Quiz {
         this.nextStep()
         this.heartBroken()
       }
-    })
+
+      this.#progress = false
+    }
   }
 
   nextStep() {
@@ -144,6 +151,7 @@ class Quiz {
   render() {
     const $timer = document.querySelector('.current-timer')
     const quizData = this.#quizData
+    this.#progress = true
 
     this.#target.style.backgroundImage = `url('${quizData[this.#player.getLevel()].img}')`
     this.createHint(quizData[this.#player.getLevel()]?.answer.length)
