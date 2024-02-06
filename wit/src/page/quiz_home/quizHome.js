@@ -1,7 +1,7 @@
 async function getQuizs() {
   return fetch('../../data.json')
     .then((response) => response.json())
-    .then((json) => json.map((ele) => ele.subject))
+    .then((json) => json.map((ele) => ele))
 }
 
 async function getPlayer() {
@@ -15,27 +15,21 @@ function createBtn() {
     quiz.forEach((ele) => {
       const quizBtnContainer = document.getElementById('main-quiz-button-container')
       const quizBtn = document.createElement('button')
+      const quizBtnTextBox = document.createElement('div')
       const quizBtnText = document.createElement('h1')
-      const randomColor = getRandomColor()
+      const quizBtnImg = document.createElement('img')
 
-      quizBtnText.innerText = `${ele}`
+      quizBtnText.innerText = `${ele.subject}`
       quizBtn.classList.add('quiz-button')
-      quizBtn.appendChild(quizBtnText)
-
-      quizBtn.style.backgroundColor = `rgba(${randomColor},40%)`
+      quizBtn.appendChild(quizBtnImg)
+      quizBtnImg.src = `${ele.quizs[Math.floor(Math.random() * ele.quizs.length)].img}`
+      quizBtnTextBox.appendChild(quizBtnText)
+      quizBtn.appendChild(quizBtnTextBox)
 
       quizBtn.addEventListener('click', clickQuizBtn)
       quizBtnContainer.appendChild(quizBtn)
     })
   })
-}
-
-function getRandomColor() {
-  const components = Array.from({ length: 3 }, () => Math.floor(Math.random() * 255))
-  const maxIndex = components.indexOf(Math.max(...components))
-  components[maxIndex] = 255
-
-  return components.join(', ')
 }
 
 createBtn()
