@@ -4,7 +4,7 @@ const player = JSON.parse(playerJSON)
 console.log(player)
 console.log(player)
 //------체력 0 -------------
-let j = 0
+
 const testfalse = player.isSuccess
 console.log(testfalse)
 if (testfalse == false) {
@@ -38,6 +38,12 @@ if (testfalse == false) {
   const insertmainscore = document.createElement('p')
   insertmainscore.innerText = `실패`
   mainscore.appendChild(insertmainscore)
+
+  const commend = document.getElementById('commend')
+
+  const commendtext = document.createElement('p')
+  commendtext.innerText = '좀 더 노력하세요!'
+  commend.appendChild(commendtext)
 } else {
   //------체력 0 -------------
 
@@ -66,6 +72,11 @@ if (testfalse == false) {
   }
 
   //------------남은체력(하트) 가져오기---------------
+  const commend = document.getElementById('commend')
+
+  const commendtext = document.createElement('p')
+  commendtext.innerText = '참 잘했어요!'
+  commend.appendChild(commendtext)
 
   //---------------맞은 문제수 표시----------------------
 
@@ -129,6 +140,7 @@ togohome.addEventListener('click', function () {
   window.location.href = '/wit/src/page/index.html'
   localStorage.clear()
 })
+
 //-------- 홈 가기 ------------
 //--------------링크 공유하기-----------------
 // function clip() {
