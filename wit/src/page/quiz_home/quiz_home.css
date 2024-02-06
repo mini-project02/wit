@@ -49,7 +49,7 @@
 
 .main {
   width: 100vw;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
