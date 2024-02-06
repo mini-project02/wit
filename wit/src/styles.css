@@ -1,0 +1,14 @@
+@import 'reset.css';
+@import 'fonts.css';
+
+/* screens */
+@import './page/index.css';
+@import './page/quiz_home/quiz_home.css';
+
+/* components */
+
+html,
+body {
+  height: 100%;
+  background-color: #0075ff;
+}

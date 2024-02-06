@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="result.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="navbar">
+      <p id="navimg"></p>
+      <h2>메뉴</h2>
+    </div>
+    <div id="container">
+      <div id="recordbox">
+        <div id="lefthp">
+          <h2 class="text">남은체력:</h2>
+        </div>
+
+        <div id="correctquiz">
+          <h2 class="text">맞춘문제수:</h2>
+        </div>
+
+        <div id="time">
+          <h2 class="text">경과시간:</h2>
+        </div>
+      </div>
+
+      <div id="scorebox">
+        <img id="userimg" />
+        <div id="username"></div>
+        <div id="mainscore"></div>
+        <div id="commend"></div>
+      </div>
+      <div id="sharebox">
+        <button id="togooz">oz코딩스쿨</button>
+        <button id="togohome">홈으로</button>
+        <button id="togolink">
+          <span class="button gray medium" class="btn" id="edit">캡쳐하기</span>
+        </button>
+      </div>
+    </div>
+    <div id="page">
+      <a id="target"></a>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+      window.onload = function () {
+        document.getElementById('edit').addEventListener('click', function (e) {
+          document.querySelector('body').classList.add('edit_cursor')
+          screenshot(e)
+        })
+      }
+
+      function screenshot(e) {
+        let page = document.documentElement // Capture entire page
+
+        html2canvas(page).then(function (canvas) {
+          let img = canvas.toDataURL('image/jpeg')
+          let a = document.createElement('a')
+          a.href = img
+          a.download = '나의 성적표.jpg'
+          a.click()
+        })
+
+        document.querySelector('body').classList.remove('edit_cursor')
+      }
+    </script>
+
+    <script src="result.js"></script>
+  </body>
+</html>

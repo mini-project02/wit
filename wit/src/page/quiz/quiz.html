@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./quizPage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="homeBtn">
+          <img src="../../images/wit.png" alt="" />
+        </div>
+        <div class="navbar">
+          <img src="/wit/src/images/bar.svg" alt="" />
+        </div>
+      </div>
+      <div class="quiz">
+        <div class="left-section">
+          <div class="img-box"></div>
+        </div>
+        <div class="right-section">
+          <div class="hp-field"></div>
+          <div class="quiz-answer"></div>
+          <form class="quiz-form">
+            <input
+              type="text"
+              class="quiz-input"
+              placeholder="정답을 입력해주세요"
+              autofocus
+            />
+          </form>
+          <div class="quiz-timer">
+            <div class="current-timer"></div>
+          </div>
+        </div>
+        <div class="toast"></div>
+      </div>
+    </div>
+    <script type="module" src="./quizPage.js"></script>
+  </body>
+</html>
