@@ -265,7 +265,7 @@ body {
 @media screen and (max-width: 768px) {
   .quiz {
     width: 490px;
-    height: 100%;
+    height: 90%;
     margin-top: 0;
     border-radius: 10px;
     padding-top: 40px;
