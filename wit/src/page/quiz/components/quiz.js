@@ -29,13 +29,13 @@ class Quiz {
   }
 
   homeClickEvent() {
-    const homBtn = document.querySelector('.nav a')
+    const homBtn = document.querySelector('.homeBtn')
     homBtn.addEventListener('click', (e) => {
       let result = confirm('퀴즈를 포기하고 홈으로 돌아가시겠습니까?')
 
       if (result) {
         localStorage.removeItem('player')
-        window.location.href = '/wit/src/page/quiz_home/quiz_home.html'
+        window.location.href = '/wit/src/page/index.html'
       }
     })
   }
