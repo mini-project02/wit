@@ -1,49 +1,17 @@
-//------연습데이터--------------
-const currentTime = new Date()
-const test = [
-  {
-    name: '강주원',
-    subject: 'programming',
-    level: 1,
-    hp: 5,
-    endTime: new Date(currentTime.getTime() + 5 * 60 * 1000),
-    startTime: new Date(),
-    isSuccess: true,
-    correct: 9,
-  },
-  {
-    name: '장요한',
-    subject: 'programming',
-    level: 2,
-    hp: 0,
-    endTime: new Date() + 3000,
-    startTime: new Date(),
-    isSuccess: false,
-    correct: 3,
-  },
-  {
-    name: '박사민',
-    subject: 'programming',
-    level: 2,
-    hp: 1,
-    endTime: new Date() + 3000,
-    startTime: new Date(),
-    isSuccess: true,
-    correct: 10,
-  },
-]
-
-//------연습데이터--------------
-
+const playerJSON = window.localStorage.getItem('player')
+console.log(playerJSON)
+const player = JSON.parse(playerJSON)
+console.log(player)
+console.log(player)
 //------체력 0 -------------
-let j = 0
-const testfalse = test[j].isSuccess
+
+const testfalse = player.isSuccess
 console.log(testfalse)
 if (testfalse == false) {
   const time = document.getElementById('time')
 
-  const startTime = new Date(test[j].startTime)
-  const endTime = new Date(test[j].endTime)
+  const startTime = new Date(player.startTime)
+  const endTime = new Date(player.endTime)
 
   const timeDifference = endTime - startTime
   const minutes = Math.floor(timeDifference / (1000 * 60))
@@ -56,13 +24,13 @@ if (testfalse == false) {
   const correctquiz = document.getElementById('correctquiz')
 
   const icon = document.createElement('p')
-  icon.innerText = `${test[j].correct} 개 `
+  icon.innerText = `${player.correct} 개 `
   correctquiz.appendChild(icon)
 
   const username = document.getElementById('username')
 
   const getname = document.createElement('p')
-  getname.innerText = `${test[j].name} 님의 점수는?`
+  getname.innerText = `${player.name} 님의 점수는?`
   username.appendChild(getname)
 
   const mainscore = document.getElementById('mainscore')
@@ -70,12 +38,18 @@ if (testfalse == false) {
   const insertmainscore = document.createElement('p')
   insertmainscore.innerText = `실패`
   mainscore.appendChild(insertmainscore)
+
+  const commend = document.getElementById('commend')
+
+  const commendtext = document.createElement('p')
+  commendtext.innerText = '좀 더 노력하세요!'
+  commend.appendChild(commendtext)
 } else {
   //------체력 0 -------------
 
   //------------남은체력(하트) 가져오기---------------
   const lefthp = document.getElementById('lefthp')
-  const recordhp = test[j].hp
+  const recordhp = player.hp
 
   if (recordhp === 5) {
     heartcount(5)
@@ -98,13 +72,18 @@ if (testfalse == false) {
   }
 
   //------------남은체력(하트) 가져오기---------------
+  const commend = document.getElementById('commend')
+
+  const commendtext = document.createElement('p')
+  commendtext.innerText = '참 잘했어요!'
+  commend.appendChild(commendtext)
 
   //---------------맞은 문제수 표시----------------------
 
   const correctquiz = document.getElementById('correctquiz')
 
   const icon = document.createElement('p')
-  icon.innerText = `${test[j].correct} 개 `
+  icon.innerText = `${player.correct} 개 `
   correctquiz.appendChild(icon)
 
   //---------------맞은 문제수 표시----------------------
@@ -112,8 +91,8 @@ if (testfalse == false) {
   //---------------경과시간 표시----------------------
   const time = document.getElementById('time')
 
-  const startTime = new Date(test[j].startTime)
-  const endTime = new Date(test[j].endTime)
+  const startTime = new Date(player.startTime)
+  const endTime = new Date(player.endTime)
 
   const timeDifference = endTime - startTime
   const minutes = Math.floor(timeDifference / (1000 * 60))
@@ -129,7 +108,7 @@ if (testfalse == false) {
   const username = document.getElementById('username')
 
   const getname = document.createElement('p')
-  getname.innerText = `${test[j].name} 님의 점수는?`
+  getname.innerText = `${player.name} 님의 점수는?`
   username.appendChild(getname)
   //-----------------이름 가져오기 ---------------------
 
@@ -141,24 +120,9 @@ if (testfalse == false) {
   if (minutes < 1) {
     plusscore += 100
   }
-  insertmainscore.innerText = `${test[j].hp * test[j].correct + plusscore}  점`
+  insertmainscore.innerText = `${player.hp * player.correct + plusscore}  점`
   mainscore.appendChild(insertmainscore)
   //------------------총점수-------------------
-
-  //--------------링크 공유하기-----------------
-  function clip() {
-    var url = ''
-    var textarea = document.createElement('textarea')
-    document.body.appendChild(textarea)
-    url = window.document.location.href
-    textarea.value = url
-    textarea.select()
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
-    alert('URL이 복사되었습니다.')
-  }
-
-  //--------------링크 공유하기-----------------
 }
 //--------oz 홈페이지 가기 ------------
 const togooz = document.getElementById('togooz')
@@ -176,4 +140,19 @@ togohome.addEventListener('click', function () {
   window.location.href = '/wit/src/page/index.html'
   localStorage.clear()
 })
+
 //-------- 홈 가기 ------------
+//--------------링크 공유하기-----------------
+// function clip() {
+//   var url = ''
+//   var textarea = document.createElement('textarea')
+//   document.body.appendChild(textarea)
+//   url = window.document.location.href
+//   textarea.value = url
+//   textarea.select()
+//   document.execCommand('copy')
+//   document.body.removeChild(textarea)
+//   alert('URL이 복사되었습니다.')
+// }
+
+//--------------링크 공유하기-----------------
