@@ -36,12 +36,20 @@ createBtn()
 
 function clickQuizBtn(event) {
   const player = JSON.parse(localStorage.getItem('player'))
-  const subject = event.target.innerText
+  let subject
   const startTime = new Date()
+
+  if (event.target.parentNode.id == 'main-quiz-button-container') {
+    subject = event.target.querySelector('h1').innerText
+    console.log(subject)
+  } else {
+    subject = event.target.parentNode.querySelector('h1').innerText
+    console.log(subject)
+  }
 
   player.subject = subject
   player.startTime = startTime
 
   localStorage.setItem('player', JSON.stringify(player))
-  location.href = '../quiz/quiz.html'
+  // location.href = '../quiz/quiz.html'
 }
