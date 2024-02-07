@@ -14,52 +14,19 @@
       { "img": "/src/images/ts.png", "answer": "TypeScript" }
     ]
   },
-
   {
-    "subject": "test",
+    "subject": "Car",
     "quizs": [
-      { "img": "/src/images/css.png", "answer": "CSS" },
-      { "img": "/src/images/dgango.png", "answer": "django" },
-      { "img": "/src/images/docker.png", "answer": "docker" },
-      { "img": "/src/images/keras.png", "answer": "Keras" },
-      { "img": "/src/images/python.png", "answer": "python" },
-      { "img": "/src/images/r.png", "answer": "R" },
-      { "img": "/src/images/ruby.png", "answer": "Ruby" },
-      { "img": "/src/images/swift.png", "answer": "Swift" },
-      { "img": "/src/images/dgango.png", "answer": "D" },
-      { "img": "/src/images/ts.png", "answer": "TypeScript" }
-    ]
-  },
-
-  {
-    "subject": "test2",
-    "quizs": [
-      { "img": "/src/images/css.png", "answer": "CSS" },
-      { "img": "/src/images/dgango.png", "answer": "django" },
-      { "img": "/src/images/docker.png", "answer": "docker" },
-      { "img": "/src/images/keras.png", "answer": "Keras" },
-      { "img": "/src/images/python.png", "answer": "python" },
-      { "img": "/src/images/r.png", "answer": "R" },
-      { "img": "/src/images/ruby.png", "answer": "Ruby" },
-      { "img": "/src/images/swift.png", "answer": "Swift" },
-      { "img": "/src/images/dgango.png", "answer": "D" },
-      { "img": "/src/images/ts.png", "answer": "TypeScript" }
-    ]
-  },
-
-  {
-    "subject": "test3",
-    "quizs": [
-      { "img": "/src/images/css.png", "answer": "CSS" },
-      { "img": "/src/images/dgango.png", "answer": "django" },
-      { "img": "/src/images/docker.png", "answer": "docker" },
-      { "img": "/src/images/keras.png", "answer": "Keras" },
-      { "img": "/src/images/python.png", "answer": "python" },
-      { "img": "/src/images/r.png", "answer": "R" },
-      { "img": "/src/images/ruby.png", "answer": "Ruby" },
-      { "img": "/src/images/swift.png", "answer": "Swift" },
-      { "img": "/src/images/dgango.png", "answer": "D" },
-      { "img": "/src/images/ts.png", "answer": "TypeScript" }
+      { "img": "/src/images/car/기아.png", "answer": "Kia" },
+      { "img": "/src/images/car/렉서스.png", "answer": "Lexus" },
+      { "img": "/src/images/car/벤츠.png", "answer": "Benz" },
+      { "img": "/src/images/car/복스바겐.png", "answer": "Volkswagen" },
+      { "img": "/src/images/car/시트로엥.png", "answer": "citroen" },
+      { "img": "/src/images/car/아우디.png", "answer": "Audi" },
+      { "img": "/src/images/car/오펠.png", "answer": "Opel" },
+      { "img": "/src/images/car/재규어.png", "answer": "jaguar" },
+      { "img": "/src/images/car/토요타.png", "answer": "Toyota" },
+      { "img": "/src/images/car/푸조.png", "answer": "peugeot" }
     ]
   }
 ]
