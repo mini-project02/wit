@@ -7,5 +7,5 @@ function getUserNickname() {
   }
 
   localStorage.setItem('player', JSON.stringify(player))
-  location.href = 'quiz_home/quiz_home.html'
+  location.href = '/src/page/quiz_home/quiz_home.html'
 }
