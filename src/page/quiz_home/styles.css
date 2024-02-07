@@ -1,9 +1,9 @@
-@import 'reset.css';
-@import 'fonts.css';
+@import '/src/page/quiz_home/reset.css';
+@import '/src/page/quiz_home/fonts.css';
 
 /* screens */
-@import './page/index.css';
-@import './page/quiz_home/quiz_home.css';
+@import '/index.css';
+@import '/src/page/quiz_home/quiz_home.css';
 
 /* components */
 
