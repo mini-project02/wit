@@ -1,5 +1,5 @@
 async function getQuizs() {
-  return fetch('../../data.json')
+  return fetch('/src/database/data.json')
     .then((response) => response.json())
     .then((json) => json.map((ele) => ele))
 }
@@ -43,5 +43,5 @@ function clickQuizBtn(event) {
   player.startTime = startTime
 
   localStorage.setItem('player', JSON.stringify(player))
-  location.href = '../quiz/quiz.html'
+  location.href = '/src/page/quiz/quiz.html'
 }
