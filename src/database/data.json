@@ -15,6 +15,21 @@
     ]
   },
   {
+    "subject": "드래곤볼",
+    "quizs": [
+      { "img": "/src/images/dragonball/android-18.webp", "answer": "인조인간18호" },
+      { "img": "/src/images/dragonball/bulma.webp", "answer": "부르마" },
+      { "img": "/src/images/dragonball/chichi.webp", "answer": "치치" },
+      { "img": "/src/images/dragonball/freezer.webp", "answer": "프리저" },
+      { "img": "/src/images/dragonball/krillin.webp", "answer": "크리링" },
+      { "img": "/src/images/dragonball/master-roshi.webp", "answer": "무천도사" },
+      { "img": "/src/images/dragonball/oh-gong.webp", "answer": "손오공" },
+      { "img": "/src/images/dragonball/piccolo.webp", "answer": "피콜로" },
+      { "img": "/src/images/dragonball/songohan.jpeg", "answer": "손오반" },
+      { "img": "/src/images/dragonball/vegeta.webp", "answer": "베지터" }
+    ]
+  },
+  {
     "subject": "Car",
     "quizs": [
       { "img": "/src/images/car/기아.png", "answer": "Kia" },
@@ -32,31 +47,16 @@
   {
     "subject": "country",
     "quizs": [
-      { "img": "/src/images/country/canada.png", "answer": "canada" },
-      { "img": "/src/images/country/china.png", "answer": "china" },
-      { "img": "/src/images/country/france.png", "answer": "france" },
-      { "img": "/src/images/country/hungary.png", "answer": "hungary" },
-      { "img": "/src/images/country/india.png", "answer": "india" },
-      { "img": "/src/images/country/italy.png", "answer": "italy" },
-      { "img": "/src/images/country/korea.png", "answer": "korea" },
-      { "img": "/src/images/country/sweden.png", "answer": "sweden" },
-      { "img": "/src/images/country/uk.png", "answer": "uk" },
-      { "img": "/src/images/country/usa.png", "answer": "usa" }
-    ]
-  },
-  {
-    "subject": "드래곤볼",
-    "quizs": [
-      { "img": "/src/images/dragonball/android-18.webp", "answer": "인조인간18호" },
-      { "img": "/src/images/dragonball/bulma.webp", "answer": "부르마" },
-      { "img": "/src/images/dragonball/chichi.webp", "answer": "치치" },
-      { "img": "/src/images/dragonball/freezer.webp", "answer": "프리저" },
-      { "img": "/src/images/dragonball/krillin.webp", "answer": "크리링" },
-      { "img": "/src/images/dragonball/master-roshi.webp", "answer": "무천도사" },
-      { "img": "/src/images/dragonball/oh-gong.webp", "answer": "손오공" },
-      { "img": "/src/images/dragonball/piccolo.webp", "answer": "피콜로" },
-      { "img": "/src/images/dragonball/songohan.jpeg", "answer": "손오반" },
-      { "img": "/src/images/dragonball/vegeta.webp", "answer": "베지터" }
+      { "img": "/src/images/country/canada.png", "answer": "캐나다" },
+      { "img": "/src/images/country/china.png", "answer": "중국" },
+      { "img": "/src/images/country/france.png", "answer": "프랑스" },
+      { "img": "/src/images/country/hungary.png", "answer": "헝가리" },
+      { "img": "/src/images/country/india.png", "answer": "인도" },
+      { "img": "/src/images/country/italy.png", "answer": "이탈리아" },
+      { "img": "/src/images/country/korea.png", "answer": "한국" },
+      { "img": "/src/images/country/sweden.png", "answer": "스웨덴" },
+      { "img": "/src/images/country/uk.png", "answer": "영국" },
+      { "img": "/src/images/country/usa.png", "answer": "미국" }
     ]
   }
 ]
