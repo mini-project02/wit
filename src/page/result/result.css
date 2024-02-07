@@ -28,7 +28,7 @@ body {
   align-items: center;
 }
 #navimg {
-  background-image: url('../../images/wit.png');
+  background-image: url('src/images/wit.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 57px;
@@ -120,7 +120,7 @@ body {
   width: 178px;
   height: 178px;
   border-radius: 50%;
-  background-image: url('../../images/usericon.png');
+  background-image: url('/src/images/usericon.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -322,7 +322,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-image: url('../../images/usericon.png');
+    background-image: url('/src/images/usericon.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
