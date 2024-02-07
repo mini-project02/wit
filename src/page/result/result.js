@@ -3,6 +3,7 @@ const player = JSON.parse(playerJSON)
 //------체력 0 -------------
 
 const testfalse = player.isSuccess
+
 if (testfalse == false) {
   const time = document.getElementById('time')
 
@@ -131,9 +132,9 @@ togooz.addEventListener('click', function () {
 //-------- 홈 가기 ------------
 
 const togohome = document.getElementById('togohome')
-
+console.log('asdfasdf')
 togohome.addEventListener('click', function () {
-  window.location.href = '/wit/src/page/index.html'
+  window.location.href = '/index.html'
   localStorage.clear()
 })
 
