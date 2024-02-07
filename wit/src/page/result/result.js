@@ -1,12 +1,8 @@
 const playerJSON = window.localStorage.getItem('player')
-console.log(playerJSON)
 const player = JSON.parse(playerJSON)
-console.log(player)
-console.log(player)
 //------체력 0 -------------
 
 const testfalse = player.isSuccess
-console.log(testfalse)
 if (testfalse == false) {
   const time = document.getElementById('time')
 

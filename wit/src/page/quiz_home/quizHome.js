@@ -4,12 +4,6 @@ async function getQuizs() {
     .then((json) => json.map((ele) => ele))
 }
 
-async function getPlayer() {
-  const player = localStorage.getItem(player)
-  const parsePlayer = JSON.parse(player)
-  console.log(parsePlayer)
-}
-
 function createBtn() {
   getQuizs().then((quiz) => {
     quiz.forEach((ele) => {
@@ -41,15 +35,13 @@ function clickQuizBtn(event) {
 
   if (event.target.parentNode.id == 'main-quiz-button-container') {
     subject = event.target.querySelector('h1').innerText
-    console.log(subject)
   } else {
     subject = event.target.parentNode.querySelector('h1').innerText
-    console.log(subject)
   }
 
   player.subject = subject
   player.startTime = startTime
 
   localStorage.setItem('player', JSON.stringify(player))
-  // location.href = '../quiz/quiz.html'
+  location.href = '../quiz/quiz.html'
 }
