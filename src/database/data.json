@@ -47,7 +47,7 @@
   {
     "subject": "드래곤볼",
     "quizs": [
-      { "img": "/src/images/dragonball/android-18.webp", "answer": "인간18호" },
+      { "img": "/src/images/dragonball/android-18.webp", "answer": "인조인간18호" },
       { "img": "/src/images/dragonball/bulma.webp", "answer": "부르마" },
       { "img": "/src/images/dragonball/chichi.webp", "answer": "치치" },
       { "img": "/src/images/dragonball/freezer.webp", "answer": "프리저" },
