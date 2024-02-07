@@ -125,7 +125,7 @@
   border: none;
   border-radius: 30px;
   margin: 0.78%;
-  margin-bottom: 2.97%;
+  margin-bottom: 1vw;
   padding: 0px;
   position: relative;
   cursor: pointer;
@@ -209,5 +209,6 @@
     width: 128.71vw;
     height: 55.71vw;
     font-size: 5.5vw;
+    margin-bottom: 5vw;
   }
 }
