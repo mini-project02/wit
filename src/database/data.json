@@ -2,7 +2,7 @@
   {
     "subject": "programming",
     "quizs": [
-      { "img": "/wit/src/images/css.png", "answer": "CSS" },
+      { "img": "/src/images/css.png", "answer": "CSS" },
       { "img": "/wit/src/images/dgango.png", "answer": "django" },
       { "img": "/wit/src/images/docker.png", "answer": "docker" },
       { "img": "/wit/src/images/keras.png", "answer": "Keras" },
