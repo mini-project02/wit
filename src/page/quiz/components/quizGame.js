@@ -163,6 +163,7 @@ class Quiz {
       if (this.#timer === quizData.length / 2) $timer.style.backgroundColor = 'red'
 
       if (this.#timer === -1) {
+        this.#progress = false
         clearInterval(this.#interval)
         new Toast('timeover', 'orange').render()
 
