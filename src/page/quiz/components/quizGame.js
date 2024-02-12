@@ -49,16 +49,22 @@ class Quiz {
   formEvent(e) {
     e.preventDefault()
     if (this.#progress) {
+      const $correctSound = document.querySelector('.correct-sound')
+      const $wrongSound = document.querySelector('.wrong-sound')
       const $quizInput = document.querySelector('.quiz-input')
       const answer = this.#quizData[this.#player.getLevel()]?.answer.trim().toLowerCase()
       clearInterval(this.#interval)
 
       if (answer === $quizInput.value.toLowerCase()) {
         new Toast('correct', 'green').render()
+        $correctSound.volume = 0.3
+        $correctSound.play()
         this.#player.correctAnswer()
         this.nextStep()
       } else {
         new Toast('wrong', 'red').render()
+        $wrongSound.volume = 0.3
+        $wrongSound.play()
         this.#player.reduceHp()
         this.nextStep()
         this.heartBroken()
@@ -157,6 +163,7 @@ class Quiz {
 
   render() {
     const $timer = document.querySelector('.current-timer')
+    const $wrongSound = document.querySelector('.wrong-sound')
     const quizData = this.#quizData
     this.#progress = true
 
@@ -176,6 +183,8 @@ class Quiz {
         this.#progress = false
         clearInterval(this.#interval)
         new Toast('timeover', 'orange').render()
+        $wrongSound.volume = 0.3
+        $wrongSound.play()
 
         this.#player.reduceHp()
         this.nextStep()
