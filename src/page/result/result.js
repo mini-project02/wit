@@ -134,8 +134,7 @@ togooz.addEventListener('click', function () {
 const togohome = document.getElementById('togohome')
 console.log('asdfasdf')
 togohome.addEventListener('click', function () {
-  window.location.href = '/index.html'
-  localStorage.clear()
+  window.open('https://github.com/mini-project02/wit.git', '_black')
 })
 
 //-------- 홈 가기 ------------
@@ -153,3 +152,23 @@ togohome.addEventListener('click', function () {
 // }
 
 //--------------링크 공유하기-----------------
+
+//--------------navimg 2번 페이지로---------
+
+const navimg = document.getElementById('navimg')
+
+navimg.addEventListener('click', function () {
+  window.location.href = '/src/page/quiz_home/quiz_home.html'
+  const confirmalert = confirm('정말로 돌아가시겠습니까?')
+  if (confirmalert) {
+    const removeValue = {
+      name: player.name,
+    }
+    console.log(removeValue)
+
+    localStorage.setItem('player', JSON.stringify(removeValue))
+  }
+})
+console.log(localStorage.player)
+
+//--------------navimg 2번 페이지로---------
