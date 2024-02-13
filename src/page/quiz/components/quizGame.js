@@ -36,6 +36,12 @@ class Quiz {
       let result = confirm('퀴즈를 포기하고 홈으로 돌아가시겠습니까?')
 
       if (result) {
+        let player = JSON.parse(localStorage.getItem('player'))
+        player = {
+          name: player.name,
+        }
+        localStorage.setItem('player', JSON.stringify(player))
+
         window.location.href = '/src/page/quiz_home/quiz_home.html'
       }
     })
