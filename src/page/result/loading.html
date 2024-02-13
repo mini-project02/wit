@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        background-color: #0075ff;
+        width: 100%;
+        height: 100%;
+      }
+
+      .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.5); /* 파란색 배경에 투명도 추가 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+      }
+
+      .loadingContainer {
+        text-align: center;
+      }
+
+      .loadingImg {
+        display: block;
+        width: 300px; /* 이미지 크기 조정 */
+        height: 300px;
+      }
+
+      #loadingText {
+        color: white;
+        font-size: 54px;
+        margin-right: 50px;
+        margin-top: 20px; /* 로딩 텍스트와 이미지 사이의 간격 조정 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mask">
+      <div class="loadingContainer">
+        <img
+          id="loadingImg"
+          class="loadingImg"
+          src="/src/images/LoadingIcon.png"
+          alt="로딩 이미지"
+        />
+        <label id="loadingText">Loading...</label>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        const mask = document.querySelector('.mask')
+        setTimeout(function () {
+          mask.style.opacity = '0' // 로딩이 끝나면 투명도를 줄여서 사라지도록 설정
+          setTimeout(function () {
+            mask.style.display = 'none' // 3초 후에 마스크를 숨김
+            window.location.href = '/src/page/result/result.html' // 페이지 이동
+          }, 500) // 0.5초 후에 실행되도록 수정
+        }, 3000) // 10초 후에 실행되도록 수정
+      })
+    </script>
+  </body>
+</html>
