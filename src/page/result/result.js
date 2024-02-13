@@ -160,6 +160,7 @@ const navimg = document.getElementById('navimg')
 navimg.addEventListener('click', function () {
   window.location.href = '/src/page/quiz_home/quiz_home.html'
   alert('정말로 돌아가시겠습니까?')
+
   localStorage.removeItem('correct')
   localStorage.removeItem('endTime')
   localStorage.removeItem('hp')
@@ -171,3 +172,5 @@ navimg.addEventListener('click', function () {
 console.log(localStorage.player)
 
 //--------------navimg 2번 페이지로---------
+
+//이미지 + 로컬스토리지 + 반응형 조금더 추가
