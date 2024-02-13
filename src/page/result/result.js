@@ -159,18 +159,16 @@ const navimg = document.getElementById('navimg')
 
 navimg.addEventListener('click', function () {
   window.location.href = '/src/page/quiz_home/quiz_home.html'
-  alert('정말로 돌아가시겠습니까?')
+  const confirmalert = confirm('정말로 돌아가시겠습니까?')
+  if (confirmalert) {
+    const removeValue = {
+      name: player.name,
+    }
+    console.log(removeValue)
 
-  localStorage.removeItem('correct')
-  localStorage.removeItem('endTime')
-  localStorage.removeItem('hp')
-  localStorage.removeItem('isSuccess')
-  localStorage.removeItem('level')
-  localStorage.removeItem('startTime')
-  localStorage.removeItem('subject')
+    localStorage.setItem('player', JSON.stringify(removeValue))
+  }
 })
 console.log(localStorage.player)
 
 //--------------navimg 2번 페이지로---------
-
-//이미지 + 로컬스토리지 + 반응형 조금더 추가
