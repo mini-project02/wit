@@ -48,8 +48,7 @@
 
 #login-title {
   width: 337px;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 32px;
   letter-spacing: 1.28px;
 }
@@ -63,9 +62,8 @@
   width: 337px;
   height: 34px;
   margin-top: 28px;
-  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 22.24px;
 }
 
@@ -83,7 +81,6 @@
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #ffc700;
-  font-family: 'Roboto Flex', sans-serif;
   font-size: 16.5px;
 }
 

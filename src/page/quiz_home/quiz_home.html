@@ -3,16 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>wit</title>
+    <title>wit | 위트 있는 퀴즈 wit</title>
     <link rel="stylesheet" href="/src/page/quiz_home/styles.css" />
   </head>
   <body>
     <div class="quizhome">
+      <nav>
+        <div class="navbar">
+          <button onclick="clickLogoutBtn()">로그아웃</button>
+        </div>
+      </nav>
       <header>
         <div class="quizhome-header">
           <div class="quizhome-header-container">
-            <img id="quizhome-header__logo" src="/src/images/wit-shadow.png" />
-            <form id="quizhome-header__search">
+            <img
+              id="quizhome-header__logo"
+              src="/src/images/wit-shadow.png"
+              onclick="clickMainTitle()"
+            />
+            <form id="quizhome-header__search" onsubmit="searchQuiz(event)">
               <input id="quizhome-header__search-input" />
               <button id="quizhome-header__search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -25,17 +34,14 @@
         <div class="main">
           <div class="main-container">
             <div class="main-header">
-              <select id="category-selector">
+              <select id="category-selector" onchange="selectLanguage(this)">
                 <option value="all">전체보기</option>
-                <!-- <option value="brand">브랜드</option>
-              <option value="person">인물</option>
-              <option value="animal">동물</option>
-              <option value="item">사물</option> -->
+                <option value="ko">한국어</option>
+                <option value="en">영어</option>
               </select>
-              <select id="order-selector">
-                <option value="new">최신순</option>
-                <!-- <option value="popular">인기순</option>
-              <option value="recommend">추천순</option> -->
+              <select id="order-selector" onchange="orderQuizzes(this)">
+                <option value="created">최신순</option>
+                <option value="likes">인기순</option>
               </select>
             </div>
             <div id="main-quiz-button-container"></div>
