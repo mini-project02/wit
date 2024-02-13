@@ -36,8 +36,7 @@ class Quiz {
       let result = confirm('퀴즈를 포기하고 홈으로 돌아가시겠습니까?')
 
       if (result) {
-        localStorage.removeItem('player')
-        window.location.href = '/index.html'
+        window.location.href = '/src/page/quiz_home/quiz_home.html'
       }
     })
   }
@@ -50,16 +49,22 @@ class Quiz {
   formEvent(e) {
     e.preventDefault()
     if (this.#progress) {
+      const $correctSound = document.querySelector('.correct-sound')
+      const $wrongSound = document.querySelector('.wrong-sound')
       const $quizInput = document.querySelector('.quiz-input')
       const answer = this.#quizData[this.#player.getLevel()]?.answer.trim().toLowerCase()
       clearInterval(this.#interval)
 
       if (answer === $quizInput.value.toLowerCase()) {
         new Toast('correct', 'green').render()
+        $correctSound.volume = 0.3
+        $correctSound.play()
         this.#player.correctAnswer()
         this.nextStep()
       } else {
         new Toast('wrong', 'red').render()
+        $wrongSound.volume = 0.3
+        $wrongSound.play()
         this.#player.reduceHp()
         this.nextStep()
         this.heartBroken()
@@ -128,6 +133,14 @@ class Quiz {
     }
   }
 
+  showFirstWord() {
+    const $answerDivs = document.querySelectorAll('.quiz-answer > div')
+    const answer = this.#quizData[this.#player.getLevel()].answer.trim().split('')
+    const randomWord = Math.floor(Math.random() * $answerDivs.length)
+
+    if ($answerDivs.length !== 1) $answerDivs[randomWord].innerText = answer[randomWord]
+  }
+
   createHeart() {
     const hpField = document.querySelector('.hp-field')
     hpField.innerHTML = ''
@@ -150,6 +163,7 @@ class Quiz {
 
   render() {
     const $timer = document.querySelector('.current-timer')
+    const $wrongSound = document.querySelector('.wrong-sound')
     const quizData = this.#quizData
     this.#progress = true
 
@@ -160,11 +174,17 @@ class Quiz {
     this.#interval = setInterval(() => {
       this.#timer--
       $timer.style.width = `${this.#timer * 10}%`
-      if (this.#timer === quizData.length / 2) $timer.style.backgroundColor = 'red'
+      if (this.#timer === quizData.length / 2) {
+        $timer.style.backgroundColor = 'red'
+        this.showFirstWord()
+      }
 
       if (this.#timer === -1) {
+        this.#progress = false
         clearInterval(this.#interval)
         new Toast('timeover', 'orange').render()
+        $wrongSound.volume = 0.3
+        $wrongSound.play()
 
         this.#player.reduceHp()
         this.nextStep()
