@@ -46,6 +46,7 @@ if (testfalse == false) {
 
   //------------남은체력(하트) 가져오기---------------
   const lefthp = document.getElementById('lefthp')
+  const lefthp1 = document.getElementById('lefthp1')
   const recordhp = player.hp
 
   if (recordhp === 5) {
@@ -64,7 +65,7 @@ if (testfalse == false) {
     for (let i = 0; i < count; i++) {
       const leftheart = document.createElement('p')
       leftheart.innerHTML = '❤️'
-      lefthp.appendChild(leftheart)
+      lefthp1.appendChild(leftheart)
     }
   }
 

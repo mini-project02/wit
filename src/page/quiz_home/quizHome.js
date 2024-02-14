@@ -59,14 +59,14 @@ function clickQuizBtn(event) {
 function searchQuiz(event) {
   event.preventDefault()
 
-  const searchInputValue = document.getElementById('quizhome-header__search-input')
+  const searchInput = document.getElementById('quizhome-header__search-input')
   const quizBtnContainer = document.getElementById('main-quiz-button-container')
 
   quizBtnContainer.innerHTML = ''
 
-  const res = getQuizs().then((quizs) =>
+  getQuizs().then((quizs) =>
     quizs.forEach((quiz) => {
-      if (quiz.subject.includes(searchInputValue.value)) {
+      if (quiz.subject.toLowerCase().includes(searchInput.value.toLowerCase())) {
         const quizBtn = document.createElement('button')
         const quizBtnTextBox = document.createElement('div')
         const quizBtnText = document.createElement('h1')
@@ -94,7 +94,7 @@ function selectLanguage(event) {
 
   quizBtnContainer.innerHTML = ''
 
-  const res = getQuizs().then((quizs) =>
+  getQuizs().then((quizs) =>
     quizs.forEach((quiz) => {
       if (selectLanguage === 'all') {
         const quizBtn = document.createElement('button')
@@ -135,7 +135,51 @@ function selectLanguage(event) {
   )
 }
 
-function orderQuizzes(event) {
-  const orderValue = event.value
+async function matchQuizzBtn() {
   const btns = document.querySelectorAll('#main-quiz-button-container button')
+  let BtnSubjects = []
+
+  btns.forEach((btn) => {
+    BtnSubjects.push(btn.innerText)
+  })
+
+  return getQuizs().then((quizs) => {
+    let quizsSubject = []
+    quizs.forEach((quiz) => {
+      quizsSubject[quiz.subject] = quiz
+    })
+    return BtnSubjects.map((subject) => quizsSubject[subject])
+  })
+}
+
+async function orderQuizzes(event) {
+  const quizBtnContainer = document.getElementById('main-quiz-button-container')
+  const matchedQuizzes = await matchQuizzBtn()
+  const orderBy = event.value
+
+  quizBtnContainer.innerHTML = ''
+
+  if (orderBy === 'created') {
+    matchedQuizzes.sort((a, b) => new Date(b[orderBy]) - new Date(a[orderBy]))
+  } else {
+    matchedQuizzes.sort((a, b) => b[orderBy] - a[orderBy])
+  }
+
+  matchedQuizzes.forEach((quiz) => {
+    const quizBtn = document.createElement('button')
+    const quizBtnTextBox = document.createElement('div')
+    const quizBtnText = document.createElement('h1')
+    const quizBtnImg = document.createElement('img')
+
+    quizBtnText.innerText = `${quiz.subject}`
+    quizBtn.classList.add('quiz-button')
+    quizBtn.appendChild(quizBtnImg)
+    quizBtnImg.src = `${quiz.quizs[Math.floor(Math.random() * quiz.quizs.length)].img}`
+    quizBtnTextBox.appendChild(quizBtnText)
+    quizBtn.appendChild(quizBtnTextBox)
+
+    quizBtn.addEventListener('click', clickQuizBtn)
+    console.log(quizBtnContainer)
+    quizBtnContainer.appendChild(quizBtn)
+  })
 }
