@@ -74,7 +74,7 @@ body {
   margin: 0;
 }
 
-#lefthp,
+#lefthp1,
 #correctquiz,
 #time {
   width: 350px;
@@ -84,8 +84,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+#lefthp1 {
+  width: 350px;
+  height: 160px;
+}
 
-#lefthp > p {
+#lefthp1 > p {
   margin-top: 25px;
   margin-left: 15px;
   font-size: 50px;
@@ -114,6 +118,10 @@ body {
 }
 #time > h2 {
   margin-top: 20px;
+}
+.buttongraymedium {
+  width: 130px;
+  height: 130px;
 }
 
 #username > p {
@@ -160,6 +168,7 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  margin: 15px;
   border: none;
   font-size: 20px;
   font-weight: bold;
@@ -203,8 +212,9 @@ body {
   #navbar {
     padding: 10px;
   }
-  #recordbox {
-    display: none;
+  .buttongraymedium {
+    width: 62px;
+    height: 62px;
   }
 
   #scorebox,
@@ -217,8 +227,12 @@ body {
     margin-top: 100px;
   }
   #sharebox {
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: row;
     width: 313px;
-    height: 300px;
+    height: 150px;
     text-align: center;
     margin: 0;
   }
@@ -233,19 +247,101 @@ body {
   #mainscore {
     font-size: 45px;
   }
+  #recordbox {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 400px;
+    padding: 0;
+    margin: 0;
+    width: 313px;
+    height: 100px;
+    margin-top: 30px;
+  }
+  #lefthp1 {
+    width: 100px;
+    height: 100px;
+    padding: 1px;
+    padding-left: 2px;
+  }
+  #recordbox > #lefthp1 {
+    width: 100px;
+    height: 100px;
+  }
+  #recordbox > #lefthp > h2 {
+    font-size: 16px;
+  }
+  #recordbox > #lefthp > #lefthp1 > p {
+    font-size: 15px;
+    padding: 1px;
+    margin: 0;
+  }
+  #recordbox > #correctquiz {
+    width: 100px;
+    height: 100px;
+  }
+  #recordbox > #correctquiz > h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  #recordbox > #correctquiz > p {
+    width: 70px;
+    font-size: 15px;
+    margin-left: 0px;
+    padding: 0;
+  }
+  #recordbox > #time {
+    width: 100px;
+    height: 100px;
+  }
+  #recordbox > #time > h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  #recordbox > #time > p {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-right: 50px;
+    width: 75px;
+  }
+  #time,
+  #correctquiz {
+    border-left: 1px gray solid;
+  }
+  #time > h2,
+  p {
+    padding-left: 15px;
+  }
+  #correctquiz > h2,
+  p {
+    padding-left: 15px;
+  }
 
   #username,
   #commend {
     font-size: 14px;
   }
+  #togooz > p {
+    font-size: 40px;
+    padding: 0;
+  }
 
   #togooz,
   #togohome,
   #togolink {
-    border-radius: 10px;
-    width: 200px;
-    height: 60px;
-    font-size: 13px;
+    border-radius: 50%;
+    width: 62px;
+    height: 62px;
+    font-size: 10px;
+    justify-content: space-around;
+  }
+  #lefthp1 {
+    text-align: center; /* 가운데 정렬 추가 */
+  }
+
+  #lefthp1 > p {
+    display: inline-block; /* inline에서 inline-block으로 변경 */
+    margin: 0 5px; /* 좌우 여백을 주어 하트들이 조금 떨어지도록 함 */
   }
 }
 
@@ -259,7 +355,10 @@ body {
   #container {
     width: 1500px;
   }
-
+  .buttongraymedium {
+    width: 160px;
+    height: 160px;
+  }
   #togooz,
   #togohome,
   #togolink {
@@ -289,7 +388,7 @@ body {
     height: 600px;
   }
 
-  #lefthp,
+  #lefthp1,
   #correctquiz,
   #time {
     width: 400px;
@@ -299,11 +398,15 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+  #lefthp1 {
+    width: 400px;
+    height: 140px;
+  }
 
-  #lefthp > p {
-    margin-top: 25px;
+  #lefthp1 > p {
+    margin-top: 20px;
     margin-left: 30px;
-    font-size: 49px;
+    font-size: 59px;
     display: inline-block;
   }
   #correctquiz > p {
