@@ -68,6 +68,13 @@ if (testfalse == false) {
       lefthp1.appendChild(leftheart)
     }
   }
+  // const heartcount = (count) => {
+  //   for (let i = 0; i < count; i++) {
+  //     const leftheart = document.createElement('p')
+  //     leftheart.innerHTML = '❤️'
+  //     lefthp1.appendChild(leftheart)
+  //   }
+  // }
 
   //------------남은체력(하트) 가져오기---------------
   const commend = document.getElementById('commend')
@@ -139,20 +146,6 @@ togohome.addEventListener('click', function () {
 })
 
 //-------- 홈 가기 ------------
-//--------------링크 공유하기-----------------
-// function clip() {
-//   var url = ''
-//   var textarea = document.createElement('textarea')
-//   document.body.appendChild(textarea)
-//   url = window.document.location.href
-//   textarea.value = url
-//   textarea.select()
-//   document.execCommand('copy')
-//   document.body.removeChild(textarea)
-//   alert('URL이 복사되었습니다.')
-// }
-
-//--------------링크 공유하기-----------------
 
 //--------------navimg 2번 페이지로---------
 
